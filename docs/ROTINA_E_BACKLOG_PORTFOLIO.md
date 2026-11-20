@@ -48,13 +48,13 @@
 | ID | Frente | Atividade | Status |
 | :--- | :--- | :--- | :--- |
 | HQ-01 | Portfólio | Criar centralização estratégica e documentação de pagamentos/rotina | ✅ |
-| HQ-02 | Portfólio | Criar repositórios privados no GitHub pessoal `ferrazmichel` e dar `git push` | ⬜ |
+| HQ-02 | Portfólio | Criar repositórios privados no GitHub pessoal `ferrazmichel` e dar `git push` | ✅ |
 | P1-01 | `us-public-data-actors` | Criar plano, roadmap, guia do feriado e scaffold do Actor 1 (`osha-safety-compliance-mcp`) | ✅ |
-| P1-02 | `us-public-data-actors` | Obter API Key gratuita DOL + testar Actor OSHA com chamada real em casa | ⬜ |
-| P1-03 | `us-public-data-actors` | Publicar Actor 1 na Apify Store com PPE e suporte MCP | ⬜ |
+| P1-02 | `us-public-data-actors` | Obter API Key gratuita DOL + testar Actor OSHA com chamada real em casa | ✅ |
+| P1-03 | `us-public-data-actors` | Publicar Actor 1 na Apify Store com PPE ($5.00/1k) e suporte MCP | ✅ |
 | P1-04 | `us-public-data-actors` | Desenvolver e publicar Actor 2 (`epa-echo-environmental-mcp`) | ⬜ |
 | P2-01 | `us-home-energy-calcs` | Criar plano SEO, guia do feriado e scaffold Next.js com 51 páginas EV Charging | ✅ |
-| P2-02 | `us-home-energy-calcs` | Rodar `npm install && npm run build` em casa e validar visualização no navegador | ⬜ |
+| P2-02 | `us-home-energy-calcs` | Implementar Fase 1 completa, rodar `npm install && npm test && npm run build` e validar exportação estática (`out/`) | ✅ |
 | P2-03 | `us-home-energy-calcs` | Registrar domínio `.com` e publicar na Cloudflare Pages / Vercel + GA4 + Search Console | ⬜ |
 | P2-04 | `us-home-energy-calcs` | Atualizar tarifas reais com `EIA_API_KEY` via `scripts/fetch_eia_rates.py` | ⬜ |
 | P2-05 | `us-home-energy-calcs` | Implementar vertical 2 (`heat-pump-vs-gas`) para os 50 estados + DC | ⬜ |
