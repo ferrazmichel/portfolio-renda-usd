@@ -48,5 +48,5 @@ Priorizamos **constância/recorrência e probabilidade de evolução**, e não v
 | Estruturação dos 3 repositórios locais (`portfolio-renda-usd`, `us-public-data-actors`, `us-home-energy-calcs`) | IA | ✅ |
 | Subir os 3 repositórios privados para a conta pessoal `ferrazmichel` no GitHub | Usuário | ✅ |
 | Executar `GUIA_INICIO_FERIADO.md` do Projeto #1 (`us-public-data-actors` — MVP OSHA) | Usuário + IA | ✅ |
-| Executar `GUIA_INICIO_FERIADO.md` do Projeto #2 (`us-home-energy-calcs` — Build + Domínio + Deploy) | Usuário + IA | ⬜ |
+| Executar `GUIA_INICIO_FERIADO.md` do Projeto #2 (`us-home-energy-calcs` — Build + Domínio + Deploy) | Usuário + IA | ✅ |
 | Iniciar pesquisa aprofundada de validação para 1ª ideia da Fase 2 (após MVP 1 e 2 no ar) | IA | ⬜ |
