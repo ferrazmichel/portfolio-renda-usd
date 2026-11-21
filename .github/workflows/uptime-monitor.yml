@@ -1,0 +1,19 @@
+name: Uptime & Health Monitor
+
+on:
+  schedule:
+    # Executa automaticamente a cada 6 horas na nuvem (00:00, 06:00, 12:00, 18:00 UTC)
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  uptime-check:
+    name: Verificar Saúde dos Serviços Críticos
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Executar Monitor de Saúde e Uptime
+        run: python3 scripts/monitor_health.py --fail-on-critical --no-save

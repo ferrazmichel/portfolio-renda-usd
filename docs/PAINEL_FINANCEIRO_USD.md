@@ -61,3 +61,4 @@
 - **Marco 1 (Primeira Validação em Dólar):** Obter a primeira venda de dado na Apify Store (**US$ 20,00 líquidos** resgatados via Wise).
 - **Marco 2 (Fluxo Constante):** R$ 1.000 a R$ 2.000/mês (~US$ 200 a US$ 350) somando chamadas de API e primeiros acessos orgânicos.
 - **Marco 3 (Escala de Tráfego & Portfólio):** R$ 5.000 a R$ 10.000/mês (~US$ 1.000 a US$ 1.800) com Mediavine aprovado no `homeenergycalcs.com` e 3+ Actors no ar.
+

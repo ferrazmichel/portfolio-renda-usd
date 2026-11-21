@@ -40,6 +40,7 @@ Priorizamos **constância/recorrência e probabilidade de evolução**, e não v
 | [`docs/CATALOGO_ATIVOS.md`](docs/CATALOGO_ATIVOS.md) | Inventário completo de ativos digitais: links, infraestrutura, modelos de faturamento e diferenciais |
 | [`docs/PAINEL_FINANCEIRO_USD.md`](docs/PAINEL_FINANCEIRO_USD.md) | Painel de controle de receita bruta, custos, lucro líquido em USD e regras de repasse via Wise |
 | [`docs/STATUS_SAUDE_SISTEMAS.md`](docs/STATUS_SAUDE_SISTEMAS.md) | Relatório em tempo real de uptime e latência gerado pelo monitor automatizado (`scripts/monitor_health.py`) |
+| [`docs/ALERTAS_UPTIME_EMAIL.md`](docs/ALERTAS_UPTIME_EMAIL.md) | Guia dos alertas automáticos de uptime por e-mail via GitHub Actions (`.github/workflows/uptime-monitor.yml`) e UptimeRobot |
 
 ---
 

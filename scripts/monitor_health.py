@@ -8,7 +8,8 @@ e gera relatório executivo consolidado sem dependências externas (Python stand
 
 from __future__ import annotations
 
-import json
+import argparse
+import os
 import ssl
 import sys
 import time
@@ -93,25 +94,19 @@ class NoRedirectHandler(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def check_url(target: dict[str, Any], timeout: float = 10.0) -> dict[str, Any]:
-    """Perform HTTP probe on target URL and calculate metrics."""
-    url = target["url"]
-    expected = target["expected_code"]
-    expected_codes = [expected] if isinstance(expected, int) else expected
-
+def _probe_once(url: str, expected_codes: list[int], timeout: float) -> tuple[int, float, bool, str | None]:
+    """Execute a single HTTP request and return status, latency, health flag, and error."""
     headers = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) PortfolioHealthMonitor/1.0",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     }
-
     req = urllib.request.Request(url, headers=headers)
-    ssl_context = ssl.create_default_context()
+    https_handler = urllib.request.HTTPSHandler(context=ssl.create_default_context())
 
-    # If checking redirect, don't auto-follow
     if 301 in expected_codes or 302 in expected_codes:
-        opener = urllib.request.build_opener(NoRedirectHandler)
+        opener = urllib.request.build_opener(NoRedirectHandler, https_handler)
     else:
-        opener = urllib.request.build_opener()
+        opener = urllib.request.build_opener(https_handler)
 
     start_time = time.perf_counter()
     status_code = 0
@@ -128,10 +123,37 @@ def check_url(target: dict[str, Any], timeout: float = 10.0) -> dict[str, Any]:
         error_message = str(exc)
 
     latency_ms = round((time.perf_counter() - start_time) * 1000, 1)
-
     is_healthy = status_code in expected_codes
     if not is_healthy and error_message is None:
         error_message = f"Status code {status_code} inesperado (esperado: {expected_codes})"
+
+    return status_code, latency_ms, is_healthy, error_message
+
+
+def check_url(
+    target: dict[str, Any],
+    timeout: float = 10.0,
+    retries: int = 2,
+    retry_delay: float = 2.0,
+) -> dict[str, Any]:
+    """Perform HTTP probe on target URL with automatic retries to avoid transient false alarms."""
+    url = target["url"]
+    expected = target["expected_code"]
+    expected_codes = [expected] if isinstance(expected, int) else expected
+
+    status_code = 0
+    latency_ms = 0.0
+    is_healthy = False
+    error_message: str | None = None
+    attempts_used = 0
+
+    for attempt in range(retries + 1):
+        attempts_used = attempt + 1
+        status_code, latency_ms, is_healthy, error_message = _probe_once(url, expected_codes, timeout)
+        if is_healthy:
+            break
+        if attempt < retries:
+            time.sleep(retry_delay)
 
     return {
         **target,
@@ -139,6 +161,7 @@ def check_url(target: dict[str, Any], timeout: float = 10.0) -> dict[str, Any]:
         "latency_ms": latency_ms,
         "is_healthy": is_healthy,
         "error_message": error_message,
+        "attempts": attempts_used,
     }
 
 
@@ -167,11 +190,9 @@ def run_health_checks() -> list[dict[str, Any]]:
         code_str = f"[{result['status_code']}]".rjust(6)
 
         if result["is_healthy"]:
-            if result["latency_ms"] < 600:
-                badge = f"{GREEN}● ONLINE{RESET}"
-            else:
-                badge = f"{YELLOW}▲ LENTO {RESET}"
-            print(f"  {badge}  {name} {latency}  {code_str}")
+            badge = f"{GREEN}● ONLINE{RESET}" if result["latency_ms"] < 600 else f"{YELLOW}▲ LENTO {RESET}"
+            retry_note = f" (após {result['attempts']} tentativas)" if result["attempts"] > 1 else ""
+            print(f"  {badge}  {name} {latency}  {code_str}{retry_note}")
         else:
             badge = f"{RED}✖ FALHA {RESET}"
             err = result["error_message"] or "Indisponível"
@@ -195,6 +216,25 @@ def run_health_checks() -> list[dict[str, Any]]:
     return results
 
 
+def build_status_table_lines(results: list[dict[str, Any]]) -> list[str]:
+    """Format health check results as Markdown table rows."""
+    lines = [
+        "| Categoria | Serviço / Endpoint | Status | HTTP | Latência (ms) | URL |",
+        "| :--- | :--- | :--- | :--- | :--- | :--- |",
+    ]
+    for r in results:
+        if not r["is_healthy"]:
+            status_icon = "🔴 Falha"
+        elif r["latency_ms"] >= 1000:
+            status_icon = "🟡 Lento"
+        else:
+            status_icon = "🟢 Online"
+        lines.append(
+            f"| {r['category']} | {r['name']} | {status_icon} | `{r['status_code']}` | `{r['latency_ms']} ms` | [{r['url']}]({r['url']}) |"
+        )
+    return lines
+
+
 def save_markdown_report(results: list[dict[str, Any]], output_path: Path) -> None:
     """Save latest health check table into docs/STATUS_SAUDE_SISTEMAS.md."""
     now_str = datetime.now(timezone.utc).strftime("%d/%m/%Y às %H:%M:%S UTC")
@@ -203,19 +243,7 @@ def save_markdown_report(results: list[dict[str, Any]], output_path: Path) -> No
         "",
         f"> Última checagem automática executada em: **{now_str}**.",
         "",
-        "| Categoria | Serviço / Endpoint | Status | HTTP | Latência (ms) | URL |",
-        "| :--- | :--- | :--- | :--- | :--- | :--- |",
-    ]
-
-    for r in results:
-        status_icon = "🟢 Online" if r["is_healthy"] else "🔴 Falha"
-        if r["is_healthy"] and r["latency_ms"] >= 1000:
-            status_icon = "🟡 Lento"
-        lines.append(
-            f"| {r['category']} | {r['name']} | {status_icon} | `{r['status_code']}` | `{r['latency_ms']} ms` | [{r['url']}]({r['url']}) |"
-        )
-
-    lines.extend([
+        *build_status_table_lines(results),
         "",
         "---",
         "",
@@ -225,12 +253,66 @@ def save_markdown_report(results: list[dict[str, Any]], output_path: Path) -> No
         "```bash",
         "python3 scripts/monitor_health.py",
         "```",
-    ])
-
+    ]
     output_path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_github_step_summary(results: list[dict[str, Any]], summary_path: str) -> None:
+    """Write Markdown summary table to GitHub Actions Step Summary."""
+    now_str = datetime.now(timezone.utc).strftime("%d/%m/%Y às %H:%M:%S UTC")
+    critical_failures = [r for r in results if not r["is_healthy"] and r.get("critical")]
+
+    lines = [
+        "## Monitor de Uptime — Portfólio Renda USD",
+        "",
+        f"Executado em: **{now_str}**",
+        "",
+        *build_status_table_lines(results),
+        "",
+    ]
+
+    if critical_failures:
+        lines.append("### ❌ Serviços Críticos com Falha")
+        lines.append("")
+        for fail in critical_failures:
+            lines.append(f"- **{fail['name']}** ({fail['url']}): `{fail['error_message']}`")
+        lines.append("")
+    else:
+        lines.append("✅ Todos os serviços críticos operam normalmente.")
+        lines.append("")
+
+    with Path(summary_path).open("a", encoding="utf-8") as fp:
+        fp.write("\n".join(lines))
+
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    """Parse CLI arguments."""
+    parser = argparse.ArgumentParser(description="Monitor de saúde e uptime do portfólio.")
+    parser.add_argument(
+        "--fail-on-critical",
+        action="store_true",
+        help="Encerra com código de saída 1 se houver falha em serviço crítico.",
+    )
+    parser.add_argument(
+        "--no-save",
+        action="store_true",
+        help="Não sobrescreve docs/STATUS_SAUDE_SISTEMAS.md (recomendado para CI).",
+    )
+    return parser.parse_args(argv)
+
+
 if __name__ == "__main__":
+    args = parse_args()
     report_results = run_health_checks()
-    report_file = Path(__file__).resolve().parent.parent / "docs" / "STATUS_SAUDE_SISTEMAS.md"
-    save_markdown_report(report_results, report_file)
+
+    if not args.no_save:
+        report_file = Path(__file__).resolve().parent.parent / "docs" / "STATUS_SAUDE_SISTEMAS.md"
+        save_markdown_report(report_results, report_file)
+
+    gh_summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if gh_summary:
+        write_github_step_summary(report_results, gh_summary)
+
+    critical_fail_count = sum(1 for r in report_results if not r["is_healthy"] and r.get("critical"))
+    if args.fail_on_critical and critical_fail_count > 0:
+        sys.exit(1)

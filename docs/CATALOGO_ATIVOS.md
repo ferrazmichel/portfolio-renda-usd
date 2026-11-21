@@ -80,3 +80,4 @@
 
 > [!NOTE]
 > **Custo operacional total do portfólio:** Apenas **~US$ 0,87 por mês** (referente ao domínio). Todo o restante opera sobre camadas gratuitas ou monetização sob demanda.
+
