@@ -13,7 +13,8 @@
 | **Actor FMCSA MCP** | API / MCP Tool | Apify Store (Logística, Seguros, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor USITC HTS Tariff MCP (Projeto #3)** | API / MCP Tool | Apify Store (Importação EUA, E-commerce, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor US 1099-NEC Compliance MCP** | API / MCP Tool | Apify Store (Contabilidade EUA, CPAs, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
-| **Actor openFDA Recall Radar MCP** | API / MCP Tool | Apify Store (Saúde, Jurídico, Supply Chain, IA) | 🟡 Build Pronto (`2CCGzUBUIwm3dfFCD`) | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
+| **Actor openFDA Recall Radar MCP** | API / MCP Tool | Apify Store (Saúde, Jurídico, Supply Chain, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
+| **Actor SEC EDGAR Filings & XBRL MCP** | API / MCP Tool | Apify Store (Finanças EUA, Equity Research, IA) | 🟡 Build Pronto (`ufSzc2Gs2Gm7bvVbo`) | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (161 páginas / 3 verticais) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
 
 ---
@@ -107,13 +108,29 @@
 - **O que faz:** Monitora recalls oficiais e ações de enforcement da U.S. FDA em **Medicamentos, Dispositivos Médicos e Alimentos** via APIs openFDA, unificando os 3 domínios em ordem cronológica reversa, atribuindo score de risco (`CRITICAL`, `HIGH`, `MODERATE`, `LOW`) e gerando alertas MCP para hospitais, farmácias, escritórios jurídicos e supply chain.
 - **Como faz (Tech Stack):** Python 3.12, Apify SDK, `httpx`, `pydantic`, `certifi`. Orquestração paralela em `api.fda.gov/{drug|device|food}/enforcement.json` sem exigir API Key.
 - **Diferencial Competitivo:** Abstrai a sintaxe Lucene da openFDA, trata `HTTP 404` em filtros vazios e normaliza metadados `openfda` (`brandNames`, `deviceNames`, `productNdcs`) + datas ISO.
-- **Hospedagem & Infra:** Apify Cloud (Container Docker — build `0.1.1` concluído `2CCGzUBUIwm3dfFCD`, aguardando publicação final na Store com 512 MB).
+- **Hospedagem & Infra:** Apify Cloud (Container Docker com 512 MB de RAM).
 - **Repositório:** [`ferrazmichel/us-public-data-actors`](https://github.com/ferrazmichel/us-public-data-actors) (`actors/openfda-recall-device-radar`).
 - **Links Oficiais:**
+  - URL da Apify Store: [apify.com/ferraz_michel/openfda-recall-device-radar](https://apify.com/ferraz_michel/openfda-recall-device-radar)
   - Console de Gestão: [console.apify.com/actors/2CCGzUBUIwm3dfFCD](https://console.apify.com/actors/2CCGzUBUIwm3dfFCD)
-  - URL Futura na Apify Store: [apify.com/ferraz_michel/openfda-recall-device-radar](https://apify.com/ferraz_michel/openfda-recall-device-radar)
 - **Precificação (PPE):**
   - Evento Primário (`fda-recall-record`): **US$ 0,005** por recall retornado (US$ 5,00 por 1.000).
+  - Custo de arranque (`Actor start`): **US$ 0,001** por execução.
+
+---
+
+### Ativo #08: SEC EDGAR Filings, 8-K Events & XBRL Financials (Actor #7)
+
+- **O que faz:** Extrai arquivamentos oficiais da SEC dos EUA (`10-K`, `10-Q`, `8-K`, `Form 4`, `DEF 14A`, `S-1`), decodifica itens de eventos materiais `8-K` e extrai snapshots auditados US-GAAP XBRL (`Revenue`, `Net Income`, `Net Margin %`, `Assets`, `Equity`, `Cash`) por ticker ou CIK.
+- **Como faz (Tech Stack):** Python 3.12, Apify SDK, `httpx`, `pydantic`, `certifi`. Consulta `data.sec.gov/submissions/` e `data.sec.gov/api/xbrl/companyfacts/` com `User-Agent` compatível com a SEC e zero API keys.
+- **Diferencial Competitivo:** Comprime arquivos XBRL de ~4 MB em poucos KB de dataset + resumo MCP (`OUTPUT`) com indicadores financeiros auditados do último `10-K`.
+- **Hospedagem & Infra:** Apify Cloud (Container Docker — build `0.1.1` concluído `ufSzc2Gs2Gm7bvVbo`, aguardando publicação final na Store com 512 MB).
+- **Repositório:** [`ferrazmichel/us-public-data-actors`](https://github.com/ferrazmichel/us-public-data-actors) (`actors/sec-edgar-filings-mcp`).
+- **Links Oficiais:**
+  - Console de Gestão: [console.apify.com/actors/ufSzc2Gs2Gm7bvVbo](https://console.apify.com/actors/ufSzc2Gs2Gm7bvVbo)
+  - URL Futura na Apify Store: [apify.com/ferraz_michel/sec-edgar-filings-mcp](https://apify.com/ferraz_michel/sec-edgar-filings-mcp)
+- **Precificação (PPE):**
+  - Evento Primário (`sec-filing-record`): **US$ 0,005** por arquivamento retornado (US$ 5,00 por 1.000).
   - Custo de arranque (`Actor start`): **US$ 0,001** por execução.
 
 ---
@@ -147,6 +164,7 @@
 | **API EPA ECHO** | U.S. EPA | Aberta ao público | US$ 0,00 | Acesso irrestrito de utilidade pública |
 | **API USITC HTS** | U.S. ITC (`hts.usitc.gov`) | Aberta ao público | US$ 0,00 | Acesso irrestrito sem API key |
 | **API openFDA** | U.S. FDA (`api.fda.gov`) | Aberta ao público | US$ 0,00 | Acesso irrestrito sem API key |
+| **API SEC EDGAR** | U.S. SEC (`data.sec.gov`) | Aberta (`User-Agent` declarado) | US$ 0,00 | Acesso irrestrito sem API key |
 | **Código Fonte** | GitHub (3 repositórios) | `ferrazmichel` | US$ 0,00 | Repositórios privados gratuitos |
 
 > [!NOTE]

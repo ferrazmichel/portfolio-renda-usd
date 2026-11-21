@@ -106,9 +106,23 @@ TARGETS: list[dict[str, Any]] = [
         "critical": True,
     },
     {
+        "category": "Apify Store Actors",
+        "name": "Actor #6 openFDA Recall Radar",
+        "url": "https://apify.com/ferraz_michel/openfda-recall-device-radar",
+        "expected_code": 200,
+        "critical": True,
+    },
+    {
         "category": "APIs Oficiais Governamentais (Upstream)",
         "name": "US EPA ECHO REST Services",
         "url": "https://echodata.epa.gov/echo/echo_rest_services.get_facilities?output=JSON&p_st=TX",
+        "expected_code": 200,
+        "critical": False,
+    },
+    {
+        "category": "APIs Oficiais Governamentais (Upstream)",
+        "name": "US FDA openFDA Enforcement API",
+        "url": "https://api.fda.gov/device/enforcement.json?limit=1",
         "expected_code": 200,
         "critical": False,
     },
