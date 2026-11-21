@@ -65,4 +65,6 @@
 | P3-02 | `us-public-data-actors` | Desenvolver e publicar Actor #5 (`us-1099-nec-state-compliance-mcp`) | ✅ |
 | P3-03 | `us-public-data-actors` | Desenvolver e publicar Actor #6 (`openfda-recall-device-radar`) | ✅ |
 | P3-04 | `us-public-data-actors` | Desenvolver e fazer deploy do Actor #7 (`sec-edgar-filings-mcp`) | ✅ |
+| P4-01 | `shopify-pixel-catalog-inspector` | Construir e empacotar Extensão Chrome MV3 para Shopify EUA (`dist/*.zip`) | ✅ |
+| P4-02 | `shopify-pixel-catalog-inspector` | Testar no Chrome local (`chrome://extensions`) e publicar na Chrome Web Store | ⬜ |
 | F2-01 | Fase 2 (Paralelo IA) | Aprofundar pesquisa de nichos da Etsy EUA e Extensão Shopify para decisão futura | ⬜ |

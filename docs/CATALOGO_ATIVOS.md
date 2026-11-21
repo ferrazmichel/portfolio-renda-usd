@@ -15,6 +15,7 @@
 | **Actor US 1099-NEC Compliance MCP** | API / MCP Tool | Apify Store (Contabilidade EUA, CPAs, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor openFDA Recall Radar MCP** | API / MCP Tool | Apify Store (Saúde, Jurídico, Supply Chain, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor SEC EDGAR Filings & XBRL MCP** | API / MCP Tool | Apify Store (Finanças EUA, Equity Research, IA) | 🟡 Build Pronto (`ufSzc2Gs2Gm7bvVbo`) | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
+| **ShopPulse (Extensão Chrome Shopify)** | Chrome Extension MV3 | Chrome Web Store (Lojistas DTC / Dropshippers EUA) | 🟡 Pacote `.zip` Pronto | Freemium + Pro (US$ 15/mês Polar/LemonSqueezy) | US$ 5,00 (taxa única Web Store) |
 | **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (161 páginas / 3 verticais) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
 
 ---
@@ -135,6 +136,15 @@
 
 ---
 
+### Ativo #09: ShopPulse — Shopify Pixel, App & Catalog Inspector (Projeto #4)
+
+- **O que faz:** Extensão Chrome *read-only* em Manifest V3 que audita qualquer loja Shopify em 1 clique: detecta domínio permanente `*.myshopify.com`, tema/ID, sinais Shopify Plus, 12 plataformas de pixels/atribuição com extração de IDs (Meta, TikTok, GA4, GTM, Klaviyo, Triple Whale), +20 apps instalados e analisa/exporta `/products.json` em CSV/JSON.
+- **Como faz (Tech Stack):** Chrome Extension Manifest V3 (ES Modules, HTML/CSS nativos sem código remoto), Python build script (`scripts/build_extension.py` gera ícones PNG e `.zip` para a Web Store). Permissões mínimas (`activeTab`, `scripting`, `storage`) sem `<all_urls>`.
+- **Repositório:** Local pronto (`shopify-pixel-catalog-inspector/`) com pacote `dist/shopify-pixel-catalog-inspector-v1.0.0.zip` compilado.
+- **Estratégia de Monetização:** Modelo Freemium (inspeção grátis + CSV até 25 linhas) → **ShopPulse Pro** (chave `SPPRO-XXXX-XXXX-XXXX` vendida a **US$ 15/mês** ou licença anual via Polar.sh / LemonSqueezy).
+
+---
+
 ### Ativo #04: HomeEnergyCalcs (Portal Web Programático)
 
 - **O que faz:** Ferramentas interativas e gratuitas de cálculo de economia energética residencial para o mercado dos EUA, cobrindo **custo de recarga de veículos elétricos (EV Home Charging)**, **bomba de calor vs. forno a gás natural (Heat Pump vs. Gas Furnace)** e **retorno de energia solar residencial (Solar Payback)** para todos os 50 estados + D.C., alimentado com tarifas oficiais da U.S. EIA API v2 (`2026-08`).
@@ -160,12 +170,13 @@
 | **Domínio `.com`** | Cloudflare Registrar | `ferrazmichel@gmail.com` | US$ 10,44 / ano | Cartão de crédito (renovação anual) |
 | **Hospedagem Web (Pages)** | Cloudflare Pages | `ferrazmichel@gmail.com` | US$ 0,00 | Gratuito (Ilimitado para sites estáticos) |
 | **Execução de Actors** | Apify Platform | `ferraz_michel` | US$ 0,00 | Coberto pela cota gratuita ($5/mês) + repasse aos usuários |
+| **Chrome Web Store** | Google Chrome Developer | `ferrazmichel@gmail.com` | US$ 5,00 *(taxa única)* | Cartão de crédito (inscrição única vitalícia) |
 | **API DOL OSHA** | U.S. Dept of Labor | `ferrazmichel@gmail.com` | US$ 0,00 | Chave gratuita de dados abertos |
 | **API EPA ECHO** | U.S. EPA | Aberta ao público | US$ 0,00 | Acesso irrestrito de utilidade pública |
 | **API USITC HTS** | U.S. ITC (`hts.usitc.gov`) | Aberta ao público | US$ 0,00 | Acesso irrestrito sem API key |
 | **API openFDA** | U.S. FDA (`api.fda.gov`) | Aberta ao público | US$ 0,00 | Acesso irrestrito sem API key |
 | **API SEC EDGAR** | U.S. SEC (`data.sec.gov`) | Aberta (`User-Agent` declarado) | US$ 0,00 | Acesso irrestrito sem API key |
-| **Código Fonte** | GitHub (3 repositórios) | `ferrazmichel` | US$ 0,00 | Repositórios privados gratuitos |
+| **Código Fonte** | GitHub | `ferrazmichel` | US$ 0,00 | Repositórios privados gratuitos |
 
 > [!NOTE]
 > **Custo operacional total do portfólio:** Apenas **~US$ 0,87 por mês** (referente ao domínio). Todo o restante opera sobre camadas gratuitas ou monetização sob demanda.
