@@ -4,6 +4,12 @@ on:
   schedule:
     # Executa automaticamente a cada 6 horas na nuvem (00:00, 06:00, 12:00, 18:00 UTC)
     - cron: '0 */6 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/monitor_health.py'
+      - '.github/workflows/uptime-monitor.yml'
   workflow_dispatch:
 
 jobs:
@@ -17,3 +23,4 @@ jobs:
 
       - name: Executar Monitor de Saúde e Uptime
         run: python3 scripts/monitor_health.py --fail-on-critical --no-save
+

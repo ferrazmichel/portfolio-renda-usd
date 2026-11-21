@@ -41,3 +41,4 @@ Se no futuro você quiser um intervalo ainda menor (a cada 5 minutos em vez de 6
 | `Apify Actor #2 - EPA` | HTTPS | `https://apify.com/ferraz_michel/epa-echo-environmental-mcp` | 5 minutos |
 
 Em **Alert Contacts**, mantenha o e-mail `ferrazmichel@gmail.com` marcado.
+
