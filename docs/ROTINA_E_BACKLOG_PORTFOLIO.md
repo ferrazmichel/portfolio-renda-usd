@@ -58,7 +58,7 @@
 | P2-01 | `us-home-energy-calcs` | Criar plano SEO, guia do feriado e scaffold Next.js com 51 páginas EV Charging | ✅ |
 | P2-02 | `us-home-energy-calcs` | Implementar Fase 1 completa, rodar `npm install && npm test && npm run build` e validar exportação estática (`out/`) | ✅ |
 | P2-03 | `us-home-energy-calcs` | Registrar domínio `.com` (`homeenergycalcs.com`) e publicar na Cloudflare Pages + Search Console | ✅ |
-| P2-04 | `us-home-energy-calcs` | Atualizar tarifas reais com `EIA_API_KEY` via `scripts/fetch_eia_rates.py` | ⬜ |
+| P2-04 | `us-home-energy-calcs` | Atualizar tarifas reais de 2026 via `scripts/fetch_eia_rates.py` (EIA API v2) | ✅ |
 | P2-05 | `us-home-energy-calcs` | Implementar vertical 2 (`heat-pump-vs-gas`) para os 50 estados + DC | ✅ |
 | P2-06 | `us-home-energy-calcs` | Implementar vertical 3 (`solar-payback`) para os 50 estados + DC (161 URLs) | ✅ |
 | F2-01 | Fase 2 (Paralelo IA) | Aprofundar pesquisa de nichos da Etsy EUA e Extensão Shopify para decisão futura | ⬜ |

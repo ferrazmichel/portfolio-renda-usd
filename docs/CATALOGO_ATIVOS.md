@@ -69,8 +69,8 @@
 
 ### Ativo #04: HomeEnergyCalcs (Portal Web Programático)
 
-- **O que faz:** Ferramentas interativas e gratuitas de cálculo de economia energética residencial para o mercado dos EUA, cobrindo **custo de recarga de veículos elétricos (EV Home Charging)**, **bomba de calor vs. forno a gás natural (Heat Pump vs. Gas Furnace)** e **retorno de energia solar residencial (Solar Payback)** para todos os 50 estados + D.C.
-- **Como faz (Tech Stack):** Next.js 15 (App Router, Static Site Generation - SSG), TypeScript, Tailwind CSS. Geração de 161 URLs estáticas ultra-rápidas no sitemap XML (51 EV + 51 Heat Pump + 51 Solar + comparativos e institucionais) e metadados OpenGraph/Twitter Cards.
+- **O que faz:** Ferramentas interativas e gratuitas de cálculo de economia energética residencial para o mercado dos EUA, cobrindo **custo de recarga de veículos elétricos (EV Home Charging)**, **bomba de calor vs. forno a gás natural (Heat Pump vs. Gas Furnace)** e **retorno de energia solar residencial (Solar Payback)** para todos os 50 estados + D.C., alimentado com tarifas oficiais da U.S. EIA API v2 (`2026-08`).
+- **Como faz (Tech Stack):** Next.js 15 (App Router, Static Site Generation - SSG), TypeScript, Tailwind CSS + atualização automática via `scripts/fetch_eia_rates.py` (EIA API v2). Geração de 161 URLs estáticas ultra-rápidas no sitemap XML (51 EV + 51 Heat Pump + 51 Solar + comparativos e institucionais) e metadados OpenGraph/Twitter Cards.
 - **Hospedagem & Infra:** Cloudflare Pages (Deploy contínuo via GitHub, CDN global em borda, SSL automático). Custo: **US$ 0,00**.
 - **Domínio & Registro:** `homeenergycalcs.com` registrado no Cloudflare Registrar por ~US$ 10,44/ano (renovação automática em Novembro/2027). Redirecionamento 301 ativo de `www` para raiz.
 - **Repositório:** [`ferrazmichel/us-home-energy-calcs`](https://github.com/ferrazmichel/us-home-energy-calcs).
