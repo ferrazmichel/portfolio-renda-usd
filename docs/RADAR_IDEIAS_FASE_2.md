@@ -77,4 +77,4 @@ Dois nichos detectados na pesquisa de dores de pequenas empresas americanas em 2
 | Mapear palavras-chave e concorrência na Etsy EUA (Ideia A) | Identificar 10 sub-nichos de planilhas B2B/1099 com menor oferta e ticket ≥ US\$ 15 | ⬜ |
 | Auditar concorrentes da Chrome Web Store p/ Shopify (Ideia B) | Verificar reclamações em reviews 1–3 estrelas de extensões atuais | ⬜ |
 | Mapear top programas PartnerStack/Reditus abertos ao Brasil (Ideia C) | Avaliar comissão recorrente e termos de busca sem gigantes | ⬜ |
-| Avaliar viabilidade de dados do Capítulo 99 na API USITC HTS (Ideia D1) | Conferir estrutura atual de tarifas adicionais 2026 para eventual Projeto #3 | ⬜ |
+| Avaliar viabilidade de dados do Capítulo 99 na API USITC HTS (Ideia D1) | Conferir estrutura atual de tarifas adicionais 2026 para eventual Projeto #3 | ✅ Implementado como Projeto #3 / Actor #4 (`usitc-hts-tariff-mcp`) |
