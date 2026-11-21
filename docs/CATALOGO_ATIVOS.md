@@ -11,7 +11,7 @@
 | **Actor OSHA MCP** | API / MCP Tool | Apify Store (B2B, Agentes de IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor EPA ECHO MCP** | API / MCP Tool | Apify Store (ESG, Imobiliário, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor FMCSA MCP** | API / MCP Tool | Apify Store (Logística, Seguros, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
-| **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (109 páginas) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
+| **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (161 páginas / 3 verticais) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
 
 ---
 
@@ -69,8 +69,8 @@
 
 ### Ativo #04: HomeEnergyCalcs (Portal Web Programático)
 
-- **O que faz:** Ferramentas interativas e gratuitas de cálculo de economia energética residencial para o mercado dos EUA, cobrindo **custo de recarga de veículos elétricos (EV Home Charging)** e **bomba de calor vs. forno a gás natural (Heat Pump vs. Gas Furnace)** para todos os 50 estados + D.C.
-- **Como faz (Tech Stack):** Next.js 15 (App Router, Static Site Generation - SSG), TypeScript, Tailwind CSS. Geração de 109 URLs estáticas ultra-rápidas no sitemap XML (51 páginas EV + 51 páginas Heat Pump + comparativos e institucionais) e metadados OpenGraph/Twitter Cards.
+- **O que faz:** Ferramentas interativas e gratuitas de cálculo de economia energética residencial para o mercado dos EUA, cobrindo **custo de recarga de veículos elétricos (EV Home Charging)**, **bomba de calor vs. forno a gás natural (Heat Pump vs. Gas Furnace)** e **retorno de energia solar residencial (Solar Payback)** para todos os 50 estados + D.C.
+- **Como faz (Tech Stack):** Next.js 15 (App Router, Static Site Generation - SSG), TypeScript, Tailwind CSS. Geração de 161 URLs estáticas ultra-rápidas no sitemap XML (51 EV + 51 Heat Pump + 51 Solar + comparativos e institucionais) e metadados OpenGraph/Twitter Cards.
 - **Hospedagem & Infra:** Cloudflare Pages (Deploy contínuo via GitHub, CDN global em borda, SSL automático). Custo: **US$ 0,00**.
 - **Domínio & Registro:** `homeenergycalcs.com` registrado no Cloudflare Registrar por ~US$ 10,44/ano (renovação automática em Novembro/2027). Redirecionamento 301 ativo de `www` para raiz.
 - **Repositório:** [`ferrazmichel/us-home-energy-calcs`](https://github.com/ferrazmichel/us-home-energy-calcs).

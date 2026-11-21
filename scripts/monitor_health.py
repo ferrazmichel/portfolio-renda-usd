@@ -51,6 +51,13 @@ TARGETS: list[dict[str, Any]] = [
     },
     {
         "category": "Portal Web (HomeEnergyCalcs)",
+        "name": "Calculadora Solar (Arizona)",
+        "url": "https://homeenergycalcs.com/solar-payback/arizona",
+        "expected_code": 200,
+        "critical": True,
+    },
+    {
+        "category": "Portal Web (HomeEnergyCalcs)",
         "name": "Sitemap XML (SEO Indexing)",
         "url": "https://homeenergycalcs.com/sitemap.xml",
         "expected_code": 200,

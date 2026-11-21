@@ -15,10 +15,11 @@ O workflow [`.github/workflows/uptime-monitor.yml`](../.github/workflows/uptime-
   1. `https://homeenergycalcs.com/` (`HTTP 200`)
   2. `https://homeenergycalcs.com/ev-charging-cost/texas` (`HTTP 200`)
   3. `https://homeenergycalcs.com/heat-pump-vs-gas/ohio` (`HTTP 200`)
-  4. `https://homeenergycalcs.com/sitemap.xml` (`HTTP 200`)
-  5. `https://apify.com/ferraz_michel/osha-safety-compliance-mcp` (`HTTP 200`)
-  6. `https://apify.com/ferraz_michel/epa-echo-environmental-mcp` (`HTTP 200`)
-  7. `https://apify.com/ferraz_michel/fmcsa-carrier-safety-mcp` (`HTTP 200`)
+  4. `https://homeenergycalcs.com/solar-payback/arizona` (`HTTP 200`)
+  5. `https://homeenergycalcs.com/sitemap.xml` (`HTTP 200`)
+  6. `https://apify.com/ferraz_michel/osha-safety-compliance-mcp` (`HTTP 200`)
+  7. `https://apify.com/ferraz_michel/epa-echo-environmental-mcp` (`HTTP 200`)
+  8. `https://apify.com/ferraz_michel/fmcsa-carrier-safety-mcp` (`HTTP 200`)
 - **Como funciona o alerta no seu e-mail:**
   - Sempre que qualquer serviço crítico falhar após as retentativas, o workflow termina com status `Failed`.
   - O GitHub envia automaticamente um **e-mail de alerta para `ferrazmichel@gmail.com`** com o link direto da execução e a tabela de diagnóstico apontando exatamente qual URL falhou.

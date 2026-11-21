@@ -60,4 +60,5 @@
 | P2-03 | `us-home-energy-calcs` | Registrar domínio `.com` (`homeenergycalcs.com`) e publicar na Cloudflare Pages + Search Console | ✅ |
 | P2-04 | `us-home-energy-calcs` | Atualizar tarifas reais com `EIA_API_KEY` via `scripts/fetch_eia_rates.py` | ⬜ |
 | P2-05 | `us-home-energy-calcs` | Implementar vertical 2 (`heat-pump-vs-gas`) para os 50 estados + DC | ✅ |
+| P2-06 | `us-home-energy-calcs` | Implementar vertical 3 (`solar-payback`) para os 50 estados + DC (161 URLs) | ✅ |
 | F2-01 | Fase 2 (Paralelo IA) | Aprofundar pesquisa de nichos da Etsy EUA e Extensão Shopify para decisão futura | ⬜ |
