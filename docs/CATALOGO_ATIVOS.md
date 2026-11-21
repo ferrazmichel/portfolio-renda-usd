@@ -11,7 +11,7 @@
 | **Actor OSHA MCP** | API / MCP Tool | Apify Store (B2B, Agentes de IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor EPA ECHO MCP** | API / MCP Tool | Apify Store (ESG, Imobiliário, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor FMCSA MCP** | API / MCP Tool | Apify Store (Logística, Seguros, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
-| **Actor USITC HTS Tariff MCP (Projeto #3)** | API / MCP Tool | Apify Store (Importação EUA, E-commerce, IA) | 🟡 Build Pronto (`k2m3X9Dr7skOSvzTu`) | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
+| **Actor USITC HTS Tariff MCP (Projeto #3)** | API / MCP Tool | Apify Store (Importação EUA, E-commerce, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (161 páginas / 3 verticais) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
 
 ---
@@ -73,11 +73,11 @@
 - **O que faz:** Consulta tarifas alfandegárias oficiais da USITC (`hts.usitc.gov`), resolve herança hierárquica de códigos estatísticos de 10 dígitos, identifica isenções de Acordos de Livre Comércio (USMCA `MX`/`CA`, KORUS `KR`, etc.), estima adicionais do Capítulo 99 (Section 301/232), calcula taxas CBP (**MPF** e **HMF**) e compara o **Landed Cost** total entre múltiplos países de origem.
 - **Como faz (Tech Stack):** Python 3.12, Apify SDK, `httpx`, `pydantic`, `certifi`. Consulta a API REST pública gratuita da USITC (`hts.usitc.gov/reststop/search`) sem necessidade de API Key pelo usuário final.
 - **Diferencial Competitivo:** Resolve sozinho a lacuna de códigos de 10 dígitos sem tarifa no JSON oficial e entrega tabela comparativa pronta (`CN` vs. `VN` vs. `MX` vs. `KR`) + resumo enxuto MCP (`OUTPUT`).
-- **Hospedagem & Infra:** Apify Cloud (Docker container — build `0.1.1` concluído, aguardando publicação final na Store com 512 MB).
+- **Hospedagem & Infra:** Apify Cloud (Container Docker com 512 MB de RAM).
 - **Repositório:** [`ferrazmichel/us-public-data-actors`](https://github.com/ferrazmichel/us-public-data-actors) (`actors/usitc-hts-tariff-mcp`).
 - **Links Oficiais:**
+  - URL da Apify Store: [apify.com/ferraz_michel/usitc-hts-tariff-mcp](https://apify.com/ferraz_michel/usitc-hts-tariff-mcp)
   - Console de Gestão: [console.apify.com/actors/k2m3X9Dr7skOSvzTu](https://console.apify.com/actors/k2m3X9Dr7skOSvzTu)
-  - URL Futura na Apify Store: [apify.com/ferraz_michel/usitc-hts-tariff-mcp](https://apify.com/ferraz_michel/usitc-hts-tariff-mcp)
 - **Precificação (PPE):**
   - Evento Primário (`hts-tariff-record`): **US$ 0,005** por linha tarifária calculada (US$ 5,00 por 1.000).
   - Custo de arranque (`Actor start`): **US$ 0,001** por execução.
@@ -111,6 +111,7 @@
 | **Execução de Actors** | Apify Platform | `ferraz_michel` | US$ 0,00 | Coberto pela cota gratuita ($5/mês) + repasse aos usuários |
 | **API DOL OSHA** | U.S. Dept of Labor | `ferrazmichel@gmail.com` | US$ 0,00 | Chave gratuita de dados abertos |
 | **API EPA ECHO** | U.S. EPA | Aberta ao público | US$ 0,00 | Acesso irrestrito de utilidade pública |
+| **API USITC HTS** | U.S. ITC (`hts.usitc.gov`) | Aberta ao público | US$ 0,00 | Acesso irrestrito sem API key |
 | **Código Fonte** | GitHub (3 repositórios) | `ferrazmichel` | US$ 0,00 | Repositórios privados gratuitos |
 
 > [!NOTE]

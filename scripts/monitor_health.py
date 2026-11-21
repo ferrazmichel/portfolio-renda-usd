@@ -92,9 +92,23 @@ TARGETS: list[dict[str, Any]] = [
         "critical": True,
     },
     {
+        "category": "Apify Store Actors",
+        "name": "Actor #4 USITC HTS Tariff & Landed Cost",
+        "url": "https://apify.com/ferraz_michel/usitc-hts-tariff-mcp",
+        "expected_code": 200,
+        "critical": True,
+    },
+    {
         "category": "APIs Oficiais Governamentais (Upstream)",
         "name": "US EPA ECHO REST Services",
         "url": "https://echodata.epa.gov/echo/echo_rest_services.get_facilities?output=JSON&p_st=TX",
+        "expected_code": 200,
+        "critical": False,
+    },
+    {
+        "category": "APIs Oficiais Governamentais (Upstream)",
+        "name": "USITC HTS REST API",
+        "url": "https://hts.usitc.gov/reststop/search?keyword=8507.60",
         "expected_code": 200,
         "critical": False,
     },
@@ -115,6 +129,16 @@ class NoRedirectHandler(urllib.request.HTTPRedirectHandler):
         return None
 
 
+def _build_ssl_context() -> ssl.SSLContext:
+    """Create SSL context preferring certifi CA bundle when installed."""
+    try:
+        import certifi  # type: ignore import-not-found
+
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
 def _probe_once(url: str, expected_codes: list[int], timeout: float) -> tuple[int, float, bool, str | None]:
     """Execute a single HTTP request and return status, latency, health flag, and error."""
     headers = {
@@ -122,7 +146,7 @@ def _probe_once(url: str, expected_codes: list[int], timeout: float) -> tuple[in
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     }
     req = urllib.request.Request(url, headers=headers)
-    https_handler = urllib.request.HTTPSHandler(context=ssl.create_default_context())
+    https_handler = urllib.request.HTTPSHandler(context=_build_ssl_context())
 
     if 301 in expected_codes or 302 in expected_codes:
         opener = urllib.request.build_opener(NoRedirectHandler, https_handler)
