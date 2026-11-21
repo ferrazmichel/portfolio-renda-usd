@@ -62,5 +62,6 @@
 | P2-05 | `us-home-energy-calcs` | Implementar vertical 2 (`heat-pump-vs-gas`) para os 50 estados + DC | ✅ |
 | P2-06 | `us-home-energy-calcs` | Implementar vertical 3 (`solar-payback`) para os 50 estados + DC (161 URLs) | ✅ |
 | P3-01 | `us-public-data-actors` | Desenvolver e publicar Projeto #3 / Actor #4 (`usitc-hts-tariff-mcp`) | ✅ |
-| P3-02 | `us-public-data-actors` | Desenvolver e fazer deploy do Actor #5 (`us-1099-nec-state-compliance-mcp`) | ✅ |
+| P3-02 | `us-public-data-actors` | Desenvolver e publicar Actor #5 (`us-1099-nec-state-compliance-mcp`) | ✅ |
+| P3-03 | `us-public-data-actors` | Desenvolver e fazer deploy do Actor #6 (`openfda-recall-device-radar`) | ✅ |
 | F2-01 | Fase 2 (Paralelo IA) | Aprofundar pesquisa de nichos da Etsy EUA e Extensão Shopify para decisão futura | ⬜ |

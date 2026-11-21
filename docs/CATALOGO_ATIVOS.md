@@ -13,6 +13,7 @@
 | **Actor FMCSA MCP** | API / MCP Tool | Apify Store (Logística, Seguros, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor USITC HTS Tariff MCP (Projeto #3)** | API / MCP Tool | Apify Store (Importação EUA, E-commerce, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor US 1099-NEC Compliance MCP** | API / MCP Tool | Apify Store (Contabilidade EUA, CPAs, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
+| **Actor openFDA Recall Radar MCP** | API / MCP Tool | Apify Store (Saúde, Jurídico, Supply Chain, IA) | 🟡 Build Pronto (`2CCGzUBUIwm3dfFCD`) | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (161 páginas / 3 verticais) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
 
 ---
@@ -101,6 +102,22 @@
 
 ---
 
+### Ativo #07: openFDA Drug, Medical Device & Food Recall Radar (Actor #6)
+
+- **O que faz:** Monitora recalls oficiais e ações de enforcement da U.S. FDA em **Medicamentos, Dispositivos Médicos e Alimentos** via APIs openFDA, unificando os 3 domínios em ordem cronológica reversa, atribuindo score de risco (`CRITICAL`, `HIGH`, `MODERATE`, `LOW`) e gerando alertas MCP para hospitais, farmácias, escritórios jurídicos e supply chain.
+- **Como faz (Tech Stack):** Python 3.12, Apify SDK, `httpx`, `pydantic`, `certifi`. Orquestração paralela em `api.fda.gov/{drug|device|food}/enforcement.json` sem exigir API Key.
+- **Diferencial Competitivo:** Abstrai a sintaxe Lucene da openFDA, trata `HTTP 404` em filtros vazios e normaliza metadados `openfda` (`brandNames`, `deviceNames`, `productNdcs`) + datas ISO.
+- **Hospedagem & Infra:** Apify Cloud (Container Docker — build `0.1.1` concluído `2CCGzUBUIwm3dfFCD`, aguardando publicação final na Store com 512 MB).
+- **Repositório:** [`ferrazmichel/us-public-data-actors`](https://github.com/ferrazmichel/us-public-data-actors) (`actors/openfda-recall-device-radar`).
+- **Links Oficiais:**
+  - Console de Gestão: [console.apify.com/actors/2CCGzUBUIwm3dfFCD](https://console.apify.com/actors/2CCGzUBUIwm3dfFCD)
+  - URL Futura na Apify Store: [apify.com/ferraz_michel/openfda-recall-device-radar](https://apify.com/ferraz_michel/openfda-recall-device-radar)
+- **Precificação (PPE):**
+  - Evento Primário (`fda-recall-record`): **US$ 0,005** por recall retornado (US$ 5,00 por 1.000).
+  - Custo de arranque (`Actor start`): **US$ 0,001** por execução.
+
+---
+
 ### Ativo #04: HomeEnergyCalcs (Portal Web Programático)
 
 - **O que faz:** Ferramentas interativas e gratuitas de cálculo de economia energética residencial para o mercado dos EUA, cobrindo **custo de recarga de veículos elétricos (EV Home Charging)**, **bomba de calor vs. forno a gás natural (Heat Pump vs. Gas Furnace)** e **retorno de energia solar residencial (Solar Payback)** para todos os 50 estados + D.C., alimentado com tarifas oficiais da U.S. EIA API v2 (`2026-08`).
@@ -129,6 +146,7 @@
 | **API DOL OSHA** | U.S. Dept of Labor | `ferrazmichel@gmail.com` | US$ 0,00 | Chave gratuita de dados abertos |
 | **API EPA ECHO** | U.S. EPA | Aberta ao público | US$ 0,00 | Acesso irrestrito de utilidade pública |
 | **API USITC HTS** | U.S. ITC (`hts.usitc.gov`) | Aberta ao público | US$ 0,00 | Acesso irrestrito sem API key |
+| **API openFDA** | U.S. FDA (`api.fda.gov`) | Aberta ao público | US$ 0,00 | Acesso irrestrito sem API key |
 | **Código Fonte** | GitHub (3 repositórios) | `ferrazmichel` | US$ 0,00 | Repositórios privados gratuitos |
 
 > [!NOTE]
