@@ -44,6 +44,13 @@ TARGETS: list[dict[str, Any]] = [
     },
     {
         "category": "Portal Web (HomeEnergyCalcs)",
+        "name": "Calculadora Heat Pump (Ohio)",
+        "url": "https://homeenergycalcs.com/heat-pump-vs-gas/ohio",
+        "expected_code": 200,
+        "critical": True,
+    },
+    {
+        "category": "Portal Web (HomeEnergyCalcs)",
         "name": "Sitemap XML (SEO Indexing)",
         "url": "https://homeenergycalcs.com/sitemap.xml",
         "expected_code": 200,
@@ -67,6 +74,13 @@ TARGETS: list[dict[str, Any]] = [
         "category": "Apify Store Actors",
         "name": "Actor #2 EPA Environmental Search",
         "url": "https://apify.com/ferraz_michel/epa-echo-environmental-mcp",
+        "expected_code": 200,
+        "critical": True,
+    },
+    {
+        "category": "Apify Store Actors",
+        "name": "Actor #3 FMCSA Carrier Safety",
+        "url": "https://apify.com/ferraz_michel/fmcsa-carrier-safety-mcp",
         "expected_code": 200,
         "critical": True,
     },

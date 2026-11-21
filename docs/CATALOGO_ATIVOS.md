@@ -10,6 +10,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Actor OSHA MCP** | API / MCP Tool | Apify Store (B2B, Agentes de IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor EPA ECHO MCP** | API / MCP Tool | Apify Store (ESG, Imobiliário, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
+| **Actor FMCSA MCP** | API / MCP Tool | Apify Store (Logística, Seguros, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (109 páginas) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
 
 ---
@@ -50,7 +51,23 @@
 
 ---
 
-### Ativo #03: HomeEnergyCalcs (Portal Web Programático)
+### Ativo #03: FMCSA & USDOT Carrier Safety, Authority & Leads (MCP-Ready)
+
+- **O que faz:** Valida a segurança, autoridade operacional (MC/MX/FF), cobertura de seguro BIPD e histórico regulatório de transportadoras rodoviárias dos EUA, além de gerar leads qualificados de frotas recém-registradas.
+- **Como faz (Tech Stack):** Python 3.12, Apify SDK, `httpx`, `pydantic`, `certifi`. Consulta e cruza 3 datasets oficiais Socrata em `data.transportation.gov` (`az4n-8mr2` Company Census, `6eyk-hxee` L&I Authority e `qh9u-swkp` Insurance Policies).
+- **Diferencial Competitivo:** Join automático em lote via USDOT de 8 dígitos, classificação de risco imediata (`PASS`, `CAUTION`, `HIGH_RISK`, `DO_NOT_USE`) para agentes de IA sem exigir API Key do usuário.
+- **Hospedagem & Infra:** Apify Cloud (Container Docker com 512 MB de RAM).
+- **Repositório:** [`ferrazmichel/us-public-data-actors`](https://github.com/ferrazmichel/us-public-data-actors) (`actors/fmcsa-carrier-safety-mcp`).
+- **Links Oficiais:**
+  - URL da Apify Store: [apify.com/ferraz_michel/fmcsa-carrier-safety-mcp](https://apify.com/ferraz_michel/fmcsa-carrier-safety-mcp)
+  - Console de Gestão: [console.apify.com/actors/dXTzf5zWuI3i1aNvd](https://console.apify.com/actors/dXTzf5zWuI3i1aNvd)
+- **Precificação (PPE):**
+  - Evento Primário (`Result / Carrier Record`): **US$ 0,005** por transportadora retornada (US$ 5,00 por 1.000).
+  - Custo de arranque (`Actor start`): **US$ 0,001** por execução.
+
+---
+
+### Ativo #04: HomeEnergyCalcs (Portal Web Programático)
 
 - **O que faz:** Ferramentas interativas e gratuitas de cálculo de economia energética residencial para o mercado dos EUA, cobrindo **custo de recarga de veículos elétricos (EV Home Charging)** e **bomba de calor vs. forno a gás natural (Heat Pump vs. Gas Furnace)** para todos os 50 estados + D.C.
 - **Como faz (Tech Stack):** Next.js 15 (App Router, Static Site Generation - SSG), TypeScript, Tailwind CSS. Geração de 109 URLs estáticas ultra-rápidas no sitemap XML (51 páginas EV + 51 páginas Heat Pump + comparativos e institucionais) e metadados OpenGraph/Twitter Cards.
@@ -61,6 +78,7 @@
   - Website em Produção: [https://homeenergycalcs.com](https://homeenergycalcs.com)
   - Dashboard Cloudflare: [dash.cloudflare.com](https://dash.cloudflare.com)
   - Google Search Console: [search.google.com/search-console](https://search.google.com/search-console)
+  - Google Analytics 4 (GA4): Stream `G-XG2MW8RJJH` via Tag `GTM-KLKPB4WP` (ativo no `<head>`)
 - **Estratégia de Monetização:**
   1. **Anúncios Display Premium (Fase Principal):** Aprovação na **Journey by Mediavine** (requisito: domínio com mais de 120 dias e tráfego orgânico crescente nos EUA; RPM médio entre **US$ 25 e US$ 45** por 1.000 visualizações).
   2. **Marketing de Afiliados:** Recomendações de carregadores residenciais Level 2 (Amazon Associates EUA) e cotação de energia solar.

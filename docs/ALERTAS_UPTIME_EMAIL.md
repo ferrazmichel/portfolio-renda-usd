@@ -14,9 +14,11 @@ O workflow [`.github/workflows/uptime-monitor.yml`](../.github/workflows/uptime-
 - **Serviços Críticos Monitorados:**
   1. `https://homeenergycalcs.com/` (`HTTP 200`)
   2. `https://homeenergycalcs.com/ev-charging-cost/texas` (`HTTP 200`)
-  3. `https://homeenergycalcs.com/sitemap.xml` (`HTTP 200`)
-  4. `https://apify.com/ferraz_michel/osha-safety-compliance-mcp` (`HTTP 200`)
-  5. `https://apify.com/ferraz_michel/epa-echo-environmental-mcp` (`HTTP 200`)
+  3. `https://homeenergycalcs.com/heat-pump-vs-gas/ohio` (`HTTP 200`)
+  4. `https://homeenergycalcs.com/sitemap.xml` (`HTTP 200`)
+  5. `https://apify.com/ferraz_michel/osha-safety-compliance-mcp` (`HTTP 200`)
+  6. `https://apify.com/ferraz_michel/epa-echo-environmental-mcp` (`HTTP 200`)
+  7. `https://apify.com/ferraz_michel/fmcsa-carrier-safety-mcp` (`HTTP 200`)
 - **Como funciona o alerta no seu e-mail:**
   - Sempre que qualquer serviço crítico falhar após as retentativas, o workflow termina com status `Failed`.
   - O GitHub envia automaticamente um **e-mail de alerta para `ferrazmichel@gmail.com`** com o link direto da execução e a tabela de diagnóstico apontando exatamente qual URL falhou.
@@ -39,6 +41,7 @@ Se no futuro você quiser um intervalo ainda menor (a cada 5 minutos em vez de 6
 | `HomeEnergyCalcs - Home` | HTTPS | `https://homeenergycalcs.com/` | 5 minutos |
 | `Apify Actor #1 - OSHA` | HTTPS | `https://apify.com/ferraz_michel/osha-safety-compliance-mcp` | 5 minutos |
 | `Apify Actor #2 - EPA` | HTTPS | `https://apify.com/ferraz_michel/epa-echo-environmental-mcp` | 5 minutos |
+| `Apify Actor #3 - FMCSA` | HTTPS | `https://apify.com/ferraz_michel/fmcsa-carrier-safety-mcp` | 5 minutos |
 
 Em **Alert Contacts**, mantenha o e-mail `ferrazmichel@gmail.com` marcado.
 
