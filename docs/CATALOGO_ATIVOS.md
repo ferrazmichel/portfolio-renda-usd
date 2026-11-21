@@ -12,7 +12,7 @@
 | **Actor EPA ECHO MCP** | API / MCP Tool | Apify Store (ESG, Imobiliário, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor FMCSA MCP** | API / MCP Tool | Apify Store (Logística, Seguros, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor USITC HTS Tariff MCP (Projeto #3)** | API / MCP Tool | Apify Store (Importação EUA, E-commerce, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
-| **Actor US 1099-NEC Compliance MCP** | API / MCP Tool | Apify Store (Contabilidade EUA, CPAs, IA) | 🟡 Build Pronto (`LfH9ZtoktBUjEskhT`) | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
+| **Actor US 1099-NEC Compliance MCP** | API / MCP Tool | Apify Store (Contabilidade EUA, CPAs, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (161 páginas / 3 verticais) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
 
 ---
@@ -90,11 +90,11 @@
 - **O que faz:** Audita conformidade de Form 1099-NEC nos **50 estados dos EUA + D.C.** para o novo cenário fiscal de 2026 (teto federal de \$2.000 vs. tetos estaduais menores de \$600/\$1.000/\$1.200), avalia canais de envio (IRS CF/SF vs. portal estadual direto), exceções (cartão de crédito/1099-K § 6050W, corporações vs. advogados) e calcula **24% de backup withholding** por falta de W-9.
 - **Como faz (Tech Stack):** Python 3.12, Apify SDK, `pydantic`. Matriz normativa dos 51 entes em memória + modo lote de fornecedores (`contractors`) + resumo MCP (`OUTPUT`).
 - **Diferencial Competitivo:** Resolve uma dor urgente do fechamento fiscal de 2026 para contadores (CPAs), ERPs e agentes financeiros sem exigir API externa.
-- **Hospedagem & Infra:** Apify Cloud (Container Docker — build pronto `LfH9ZtoktBUjEskhT`, aguardando configuração final de 512 MB e publicação na Store).
+- **Hospedagem & Infra:** Apify Cloud (Container Docker com 512 MB de RAM).
 - **Repositório:** [`ferrazmichel/us-public-data-actors`](https://github.com/ferrazmichel/us-public-data-actors) (`actors/us-1099-nec-state-compliance-mcp`).
 - **Links Oficiais:**
+  - URL da Apify Store: [apify.com/ferraz_michel/us-1099-nec-state-compliance-mcp](https://apify.com/ferraz_michel/us-1099-nec-state-compliance-mcp)
   - Console de Gestão: [console.apify.com/actors/LfH9ZtoktBUjEskhT](https://console.apify.com/actors/LfH9ZtoktBUjEskhT)
-  - URL Futura na Apify Store: [apify.com/ferraz_michel/us-1099-nec-state-compliance-mcp](https://apify.com/ferraz_michel/us-1099-nec-state-compliance-mcp)
 - **Precificação (PPE):**
   - Evento Primário (`compliance-check`): **US$ 0,005** por avaliação/fornecedor (US$ 5,00 por 1.000).
   - Custo de arranque (`Actor start`): **US$ 0,001** por execução.
