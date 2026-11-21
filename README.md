@@ -37,6 +37,9 @@ Priorizamos **constância/recorrência e probabilidade de evolução**, e não v
 | [`docs/RADAR_IDEIAS_FASE_2.md`](docs/RADAR_IDEIAS_FASE_2.md) | Banco de ideias paralelas para pesquisa futura (Etsy EUA, Extensão Chrome Shopify, Diretório B2B + Afiliados, Micro-Utilitários HTS/1099 e FinançasCloud) |
 | [`docs/PAGAMENTOS_E_CONFORMIDADE_EXTERIOR.md`](docs/PAGAMENTOS_E_CONFORMIDADE_EXTERIOR.md) | Como receber no Brasil em dólar em 2026 (Wise, Payoneer, AdSense, Mediavine, Paddle, Polar.sh — e por que evitar Lemon Squeezy) + alertas fiscais/estatutários |
 | [`docs/ROTINA_E_BACKLOG_PORTFOLIO.md`](docs/ROTINA_E_BACKLOG_PORTFOLIO.md) | Cadência para 1–2 h/dia no trabalho + execução em casa nos feriados/fins de semana e backlog mestre |
+| [`docs/CATALOGO_ATIVOS.md`](docs/CATALOGO_ATIVOS.md) | Inventário completo de ativos digitais: links, infraestrutura, modelos de faturamento e diferenciais |
+| [`docs/PAINEL_FINANCEIRO_USD.md`](docs/PAINEL_FINANCEIRO_USD.md) | Painel de controle de receita bruta, custos, lucro líquido em USD e regras de repasse via Wise |
+| [`docs/STATUS_SAUDE_SISTEMAS.md`](docs/STATUS_SAUDE_SISTEMAS.md) | Relatório em tempo real de uptime e latência gerado pelo monitor automatizado (`scripts/monitor_health.py`) |
 
 ---
 
