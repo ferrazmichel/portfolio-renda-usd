@@ -1,12 +1,13 @@
 # AGENTS.md — Contexto Permanente do Portfólio de Renda Online em Dólar
 
 > **Leia este arquivo antes de propor qualquer nova ação, pesquisa ou projeto neste portfólio.**  
-> Última atualização: 19/11/2026.
+> Última atualização: 23/11/2026.
 
 ---
 
-## 1. Missão e Meta Financeira
+## 1. Missão, Propósito e Meta Financeira
 
+- **Propósito central:** transformar positivamente a vida do usuário e de sua família e destinar **parte das receitas geradas para doações à caridade**, ajudando quem mais precisa.
 - **Objetivo inicial do portfólio:** gerar pelo menos **R\$ 1.650 líquidos/mês** (referência de 1 salário mínimo nacional) trabalhando exclusivamente no computador, com **mínima intervenção humana recorrente** após a construção.
 - **Referência cambial (19/11/2026):** dólar comercial ~R\$ 5,90.
   - Meta líquida em dólar: **~US\$ 280/mês**.
@@ -22,7 +23,8 @@
   - **Finais de semana e feriados (casa):** blocos maiores para executar código localmente, testar em runtime, registrar domínios/contas pessoais e fazer `git push` / deploy na conta pessoal **`ferrazmichel`**.
 - **Regra rígida de Git/GitHub no trabalho:**
   - **Nunca** usar o `gh` CLI ou tokens corporativos (`michel-ferraz_sefazes`) para criar ou publicar repositórios deste portfólio.
-  - Todos os repositórios pessoais devem ter `user.name = ferrazmichel`, `user.email = ferrazmichel@gmail.com` e remote apontando para `https://github.com/ferrazmichel/<repo>.git`.
+  - Todos os repositórios pessoais devem ter `user.name = ferrazmichel`, `user.email = ferrazmichel@gmail.com` e remote apontando para `https://ferrazmichel@github.com/ferrazmichel/<repo>.git` com `credential.https://github.com.helper` local configurado para `--user ferrazmichel` (mantendo `michel-ferraz_sefazes` como conta ativa global).
+  - Skills globais operacionais no Antigravity (sem Python/Node): `/sync-repos` (sincronização multi-PC) e `/painel-usd` (receitas em `data/receitas_portfolio.json`, câmbio, Apify e uptime dos 17 ativos).
 - **Estilo do negócio desejado:**
   - Produtos digitais 100% *self-service* (sem reuniões de venda, sem atendimento manual em WhatsApp, sem operação artesanal recorrente).
   - Distribuição embutida (marketplaces com busca própria ou SEO programático de cauda longa em inglês), evitando depender de presença em câmera ou tráfego pago desde o dia 1.
@@ -45,6 +47,10 @@
 
 ## 4. Divisão de Trabalho (IA vs. Usuário)
 
+- **Postura Consultiva e Propositiva da IA (Diretriz Permanente):**
+  - Atuar de forma ativa como sócio estratégico focado em acelerar a geração real de receita em USD.
+  - Analisar continuamente os produtos em produção e sugerir proativamente melhorias de distribuição, conversão, SEO, precificação e retenção.
+  - Propor novas oportunidades de produto sempre que identificar assimetria clara de retorno em dólar vs. esforço de manutenção.
 - **Responsabilidade da IA:**
   - Pesquisa de mercado, lacunas competitivas e fontes de dados oficiais (APIs gratuitas dos EUA).
   - Arquitetura, escrita de código, testes, SEO programático, copywriting em inglês nativo e manutenção de documentação.
