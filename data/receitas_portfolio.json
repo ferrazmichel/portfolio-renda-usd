@@ -1,0 +1,41 @@
+{
+  "metas": {
+    "wise_min_payout_usd": 20.0,
+    "marco1_usd": 20.0,
+    "marco2_liq_usd": 280.0,
+    "marco2_bruto_usd": 425.0,
+    "marco3_usd": 1000.0,
+    "apify_creator_share": 0.80
+  },
+  "dominios": [
+    {
+      "nome": "homeenergycalcs.com",
+      "registrado_em": "2026-11-20",
+      "meta_dias_mediavine": 120,
+      "custo_anual_usd": 10.44
+    }
+  ],
+  "apify_username": "ferraz_michel",
+  "apify_actors_fallback": [
+    "osha-safety-compliance-mcp",
+    "epa-echo-environmental-mcp",
+    "fmcsa-carrier-safety-mcp",
+    "usitc-hts-tariff-mcp",
+    "us-1099-nec-state-compliance-mcp",
+    "openfda-recall-device-radar",
+    "sec-edgar-filings-mcp"
+  ],
+  "meses": [
+    {
+      "mes": "2026-11",
+      "apify_bruto_usd": 0.0,
+      "apify_liquido_usd": 0.0,
+      "ads_web_usd": 0.0,
+      "shoppulse_usd": 0.0,
+      "afiliados_usd": 0.0,
+      "custos_infra_usd": 10.44,
+      "resgate_wise_brl": 0.0,
+      "observacao": "Lancamento - registro dominio homeenergycalcs.com"
+    }
+  ]
+}
