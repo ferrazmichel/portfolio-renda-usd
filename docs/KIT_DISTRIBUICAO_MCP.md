@@ -129,10 +129,10 @@ Diretórios como **Glama** (`https://glama.ai/mcp/servers`), **Smithery** (`http
 
 | Atividade | Diretório / Canal | Onda | Status |
 | :--- | :--- | :--- | :--- |
-| Submeter fichas dos 7 Actors (ou suite) | PulseMCP (`pulsemcp.com`) | Onda 1 | ⬜ |
-| Submeter fichas dos 7 Actors (ou suite) | MCP.so (`mcp.so`) | Onda 1 | ⬜ |
-| Submeter fichas dos 7 Actors (ou suite) | mcpservers.org (`mcpservers.org`) | Onda 1 | ⬜ |
+| Submeter suíte `us-gov-mcp-suite` | mcpservers.org (`mcpservers.org`, Grátis $0, Finanças, OAuth) | Onda 1 | 🔄 *(Enviado em 23/11/2026 — revisão em até 2 semanas)* |
+| Submeter fichas dos 7 Actors (ou suite) | PulseMCP (`pulsemcp.com`) | Onda 1 | ⬜ *(Novas submissões pausadas temporariamente em 23/11/2026)* |
+| Submeter fichas dos 7 Actors (ou suite) | MCP.so (`mcp.so`) | Onda 1 | ⬜ *(Exigindo taxa de $39 em 23/11/2026 — pulado por disciplina de custo zero)* |
 | Criar repositório vitrine público `us-gov-mcp-suite` | GitHub (`ferrazmichel`) | Onda 2 | ✅ |
-| Registrar repositório vitrine | Glama (`glama.ai/mcp/servers`) | Onda 2 | ⬜ |
-| Registrar repositório vitrine | Smithery (`smithery.ai`) | Onda 2 | ⬜ |
-| Abrir PR em lista curada | `awesome-mcp-servers` (GitHub) | Onda 2 | ⬜ |
+| Registrar `Hosted endpoint` da suíte | Glama (`glama.ai/mcp/servers`) | Onda 2 | 🔄 *(Enviado em 23/11/2026 — aguardando revisão/claim por e-mail)* |
+| Registrar repositório vitrine | Smithery (`smithery.ai`) | Onda 2 | ⬜ *(Proxy de terceiros descontinuado em 31/10/2026 — descartado)* |
+| Abrir PR em lista curada | `awesome-mcp-servers` (GitHub) | Onda 2 | ⬜ *(Próxima ação gratuita)* |
