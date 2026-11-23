@@ -12,13 +12,13 @@ Consolida em uma única chamada (via PowerShell puro, sem Python ou Node.js):
 1. **Receitas acumuladas e P&L** a partir de `portfolio-renda-usd/data/receitas_portfolio.json`, com cotação USD/BRL ao vivo (AwesomeAPI + fallback BCB PTAX) e progresso para saque mínimo Wise / metas.
 2. **Métricas ao vivo da Apify Store** (usuários, runs totais e 30d, modelo de cobrança), usando `APIFY_TOKEN` quando configurado em variável de ambiente ou a API pública dos Actors.
 3. **Cronômetro de maturação de domínio** (`homeenergycalcs.com` → 120 dias para Journey by Mediavine).
-4. **Checagem de saúde e uptime HTTP** dos 16 ativos/APIs (equivalente ao `scripts/monitor_health.py`).
+4. **Checagem de saúde e uptime HTTP** dos 17 ativos/APIs (equivalente ao `scripts/monitor_health.py`).
 
 ## Modos de Execução
 
 - **`all` (padrão):** executa financeiro + câmbio + domínio + Apify + saúde/uptime completo.
 - **`receita`:** apenas financeiro + câmbio + domínio + Apify (mais rápido).
-- **`saude`:** apenas checagem HTTP de uptime/latência dos 16 alvos.
+- **`saude`:** apenas checagem HTTP de uptime/latência dos 17 alvos.
 
 Comando:
 

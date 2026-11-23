@@ -17,7 +17,7 @@
 
 ## 2. Regras de Pagamento e Saque por Canal
 
-### Apify Store (Actors #1 a #6)
+### Apify Store (Actors #1 a #7)
 - **Divisão de Receita:** O criador recebe **80%** da receita gerada pelos usuários.
 - **Ciclo de Fechamento:** Mensal (dias 1 a 10 do mês seguinte).
 - **Aprovação de Fatura:** Automática no dia 14.

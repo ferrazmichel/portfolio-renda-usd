@@ -113,6 +113,13 @@ TARGETS: list[dict[str, Any]] = [
         "critical": True,
     },
     {
+        "category": "Apify Store Actors",
+        "name": "Actor #7 SEC EDGAR Filings",
+        "url": "https://apify.com/ferraz_michel/sec-edgar-filings-mcp",
+        "expected_code": 200,
+        "critical": True,
+    },
+    {
         "category": "APIs Oficiais Governamentais (Upstream)",
         "name": "US EPA ECHO REST Services",
         "url": "https://echodata.epa.gov/echo/echo_rest_services.get_facilities?output=JSON&p_st=TX",
