@@ -15,10 +15,8 @@ Estes diretórios aceitam submissão direta por formulário web apontando para o
 
 ### Onda 2 — Destravar Glama, Smithery e `awesome-mcp-servers` Sem Expor Código Privado
 Diretórios como **Glama** (`https://glama.ai/mcp/servers`), **Smithery** (`https://smithery.ai/`) e a lista **punkpeye/awesome-mcp-servers** no GitHub exigem vincular um **repositório público no GitHub**.
-- **Solução segura:** criar um repositório vitrine público separado na sua conta pessoal `ferrazmichel` (ex.: **`us-gov-mcp-suite`**) contendo **apenas**:
-  - `README.md` com documentação, casos de uso, links da Apify Store e exemplos de prompts;
-  - `mcp.json` / `claude_desktop_config.json` apontando para os endpoints hospedados na Apify (`https://mcp.apify.com/?actors=...`).
-- Assim você conquista **backlinks no GitHub + listagem nos maiores diretórios MCP**, mantendo 100% do código Python dos Actors protegido no repositório privado `us-public-data-actors`.
+- **Repositório vitrine público criado:** https://github.com/ferrazmichel/us-gov-mcp-suite
+- Contém **apenas** documentação, `mcp.json`, `glama.json` e exemplos de uso apontando para os endpoints hospedados na Apify (`https://mcp.apify.com/?actors=...`), mantendo 100% do código Python dos Actors protegido no repositório privado `us-public-data-actors`.
 
 ---
 
@@ -134,7 +132,7 @@ Diretórios como **Glama** (`https://glama.ai/mcp/servers`), **Smithery** (`http
 | Submeter fichas dos 7 Actors (ou suite) | PulseMCP (`pulsemcp.com`) | Onda 1 | ⬜ |
 | Submeter fichas dos 7 Actors (ou suite) | MCP.so (`mcp.so`) | Onda 1 | ⬜ |
 | Submeter fichas dos 7 Actors (ou suite) | mcpservers.org (`mcpservers.org`) | Onda 1 | ⬜ |
-| Criar repositório vitrine público `us-gov-mcp-suite` | GitHub (`ferrazmichel`) | Onda 2 | ⬜ |
+| Criar repositório vitrine público `us-gov-mcp-suite` | GitHub (`ferrazmichel`) | Onda 2 | ✅ |
 | Registrar repositório vitrine | Glama (`glama.ai/mcp/servers`) | Onda 2 | ⬜ |
 | Registrar repositório vitrine | Smithery (`smithery.ai`) | Onda 2 | ⬜ |
 | Abrir PR em lista curada | `awesome-mcp-servers` (GitHub) | Onda 2 | ⬜ |

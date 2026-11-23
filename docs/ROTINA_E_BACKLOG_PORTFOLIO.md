@@ -71,5 +71,6 @@
 | P2-07 | `us-home-energy-calcs` | Configurar Bing Webmaster Tools + IndexNow (161 URLs submetidas) | ✅ |
 | P3-05 | `us-public-data-actors` | Publicar Actor #7 (SEC EDGAR) e otimizar os 7 Actors (512 MB, categorias e SEO) | ✅ |
 | D1-01 | Distribuição MCP | Submeter os 7 Actors nos diretórios Onda 1 (`PulseMCP`, `MCP.so`, `mcpservers.org`) usando `docs/KIT_DISTRIBUICAO_MCP.md` | ⬜ |
-| D1-02 | Distribuição MCP | Criar repositório vitrine público `us-gov-mcp-suite` para submissão em `Glama`, `Smithery` e `awesome-mcp-servers` | ⬜ |
+| D1-02 | Distribuição MCP | Criar repositório vitrine público `us-gov-mcp-suite` para submissão em `Glama`, `Smithery` e `awesome-mcp-servers` | ✅ |
+| D1-03 | Distribuição MCP | Submeter `https://github.com/ferrazmichel/us-gov-mcp-suite` em `Glama`, `Smithery` e `awesome-mcp-servers` | ⬜ |
 | F2-01 | Fase 2 (Paralelo IA) | Aprofundar pesquisa de nichos da Etsy EUA e Extensão Shopify para decisão futura | ⬜ |
