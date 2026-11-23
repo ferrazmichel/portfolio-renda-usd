@@ -66,7 +66,7 @@
 | P3-03 | `us-public-data-actors` | Desenvolver e publicar Actor #6 (`openfda-recall-device-radar`) | ✅ |
 | P3-04 | `us-public-data-actors` | Desenvolver e fazer deploy do Actor #7 (`sec-edgar-filings-mcp`) | ✅ |
 | P4-01 | `shopify-pixel-catalog-inspector` | Construir e empacotar Extensão Chrome MV3 para Shopify EUA (`dist/*.zip`) | ✅ |
-| P4-02 | `shopify-pixel-catalog-inspector` | Testar no Chrome local (`chrome://extensions`) e publicar na Chrome Web Store | ⬜ |
+| P4-02 | `shopify-pixel-catalog-inspector` | Testar no Chrome local (`chrome://extensions`), configurar Polar.sh e publicar na Chrome Web Store usando `docs/KIT_PUBLICACAO_SHOPPULSE.md` | ⬜ |
 | HQ-04 | Portfólio | Criar skills `/sync-repos` e `/painel-usd` (PowerShell) e ledger `data/receitas_portfolio.json` | ✅ |
 | P2-07 | `us-home-energy-calcs` | Configurar Bing Webmaster Tools + IndexNow (161 URLs submetidas) | ✅ |
 | P3-05 | `us-public-data-actors` | Publicar Actor #7 (SEC EDGAR) e otimizar os 7 Actors (512 MB, categorias e SEO) | ✅ |
