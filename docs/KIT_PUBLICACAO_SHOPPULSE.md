@@ -150,7 +150,23 @@ A **Polar.sh** atua como *Merchant of Record* (cuida de impostos/VAT globais aut
 
 ---
 
-## 7. Tabela de Atividades (`ShopPulse`)
+## 7. Plano de Tração e Divulgação Pós-Aprovação (Primeiros 100 Usuários → Assinantes Pro)
+
+> [!IMPORTANT]
+> **Lembrete para a IA:** assim que o usuário confirmar a aprovação na Chrome Web Store, lembrar proativamente destas 4 ações e já entregar os textos prontos em inglês para cada canal.
+
+1. **Ação 1 — AlternativeTo & SaaSHub (capturar quem busca concorrentes caros no Google):**
+   - Cadastrar o **ShopPulse** gratuitamente no **AlternativeTo** e **SaaSHub** posicionando-o como alternativa mais leve, privada (sem `<all_urls>`) e mais barata ao **Koala Inspector** e **PPSPY** (`US$ 19–49/mês`).
+2. **Ação 2 — Lançamento no Product Hunt (pico inicial + backlink):**
+   - Submissão simples com foco em privacidade Manifest V3 + *1-click pixel, app & CSV inspector* — gera instalações iniciais e ajuda a página da Chrome Web Store a ranquear no Google.
+3. **Ação 3 — Comunidades Reddit / Shopify (`r/shopify`, `r/ecommerce`, `r/dropship`, `r/PPC` — sem spam):**
+   - Responder dúvidas reais de lojistas/media buyers sobre detecção de temas, apps e pixels, oferecendo a versão gratuita (sem login nem cartão) para conquistar os **primeiros 50–100 usuários ativos e 5–10 avaliações 5 estrelas** (principal gatilho de ranqueamento orgânico na busca da Chrome Web Store).
+4. **Ação 4 — Otimização contínua de conversão Free → Pro:**
+   - Acompanhar a conversão do limite de 25 linhas no CSV para o plano Pro (`US$ 15/mês` / `US$ 120/ano`) na Polar.sh (meta inicial: 2%–5% dos ativos) e iterar copy e recursos conforme feedback real.
+
+---
+
+## 8. Tabela de Atividades (`ShopPulse`)
 
 | ID | Etapa | Ação | Status |
 | :--- | :--- | :--- | :--- |
@@ -160,3 +176,7 @@ A **Polar.sh** atua como *Merchant of Record* (cuida de impostos/VAT globais aut
 | SP-04 | Teste Local & Prints | Testar em `chrome://extensions` e capturar 3 screenshots `1280×800` | ⬜ |
 | SP-05 | Pagamentos | Criar produto `ShopPulse Pro` (`$15/mês`, chave `SPPRO-`) na Polar.sh e linkar na extensão | ⬜ |
 | SP-06 | Publicação | Pagar taxa única de `$5`, publicar Política de Privacidade e enviar `.zip` na Chrome Web Store | ⬜ |
+| SP-07 | Divulgação Pós-Aprovação | Cadastrar ShopPulse no `AlternativeTo` (alternativa a Koala Inspector / PPSPY) e `SaaSHub` | ⬜ |
+| SP-08 | Divulgação Pós-Aprovação | Preparar textos e publicar lançamento gratuito no `Product Hunt` | ⬜ |
+| SP-09 | Divulgação Pós-Aprovação | Fazer 3–5 contribuições úteis (sem spam) em `r/shopify`, `r/ecommerce`, `r/PPC` para primeiros 50–100 usuários e 5–10 reviews | ⬜ |
+| SP-10 | Otimização ASO/Pro | Revisar ranking na Chrome Web Store e taxa de conversão Free → Pro após 30 dias | ⬜ |
