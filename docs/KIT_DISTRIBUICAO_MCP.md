@@ -133,6 +133,6 @@ Diretórios como **Glama** (`https://glama.ai/mcp/servers`), **Smithery** (`http
 | Submeter fichas dos 7 Actors (ou suite) | PulseMCP (`pulsemcp.com`) | Onda 1 | ⬜ *(Novas submissões pausadas temporariamente em 23/11/2026)* |
 | Submeter fichas dos 7 Actors (ou suite) | MCP.so (`mcp.so`) | Onda 1 | ⬜ *(Exigindo taxa de $39 em 23/11/2026 — pulado por disciplina de custo zero)* |
 | Criar repositório vitrine público `us-gov-mcp-suite` | GitHub (`ferrazmichel`) | Onda 2 | ✅ |
-| Registrar `Hosted endpoint` da suíte | Glama (`glama.ai/mcp/servers`) | Onda 2 | 🔄 *(Enviado em 23/11/2026 — aguardando revisão/claim por e-mail)* |
+| Registrar `Hosted endpoint` da suíte | Glama (`glama.ai/mcp/connectors/com.apify.mcp/us-gov-mcp-suite`) | Onda 2 | ✅ *(Aprovado e no ar em 23/11/2026; badge no README; e-mail de claim enviado)* |
 | Registrar repositório vitrine | Smithery (`smithery.ai`) | Onda 2 | ⬜ *(Proxy de terceiros descontinuado em 31/10/2026 — descartado)* |
-| Abrir PR em lista curada | `awesome-mcp-servers` (GitHub) | Onda 2 | ⬜ *(Próxima ação gratuita)* |
+| Abrir PR em lista curada | `punkpeye/awesome-remote-mcp-servers` ([PR #5684](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/5684)) | Onda 2 | 🔄 *(Aberto em 23/11/2026 como `ferrazmichel` — aguardando CI/merge)* |
