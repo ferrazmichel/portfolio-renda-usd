@@ -8,7 +8,7 @@ description: >-
 
 # Sync Repos
 
-Sincroniza ou verifica todos os repositórios Git do workspace atual usando [sync_repos.ps1](./scripts/sync_repos.ps1), sem depender de Python ou Node.js.
+Sincroniza ou verifica todos os repositórios Git do workspace atual usando [sync_repos.ps1](./scripts/sync_repos.ps1) (Windows) ou [sync_repos.sh](./scripts/sync_repos.sh) (macOS/Linux), sem depender de Python ou Node.js.
 
 ## Modos de Uso
 
@@ -22,16 +22,30 @@ Sincroniza ou verifica todos os repositórios Git do workspace atual usando [syn
 
 ## Execução
 
-Determine o modo pedido pelo usuário (`pull` por padrão; `check` se pedir checagem, pendências, status ou "antes de sair") e execute o script da skill com o caminho absoluto do workspace atual:
+Determine o modo pedido pelo usuário (`pull` por padrão; `check` se pedir checagem, pendências, status ou "antes de sair") e execute o script correspondente ao sistema operacional com o caminho absoluto do workspace atual:
+
+**Windows (PowerShell):**
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File "<CAMINHO_PARA_ESTA_SKILL>\scripts\sync_repos.ps1" -Mode <pull|check> -RootPath "<WORKSPACE_ROOT>"
 ```
 
-Exemplo com a skill global:
+Exemplo com a skill global (Windows):
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.gemini\config\skills\sync-repos\scripts\sync_repos.ps1" -Mode pull -RootPath "<WORKSPACE_ROOT>"
+```
+
+**macOS / Linux (Bash):**
+
+```bash
+bash "<CAMINHO_PARA_ESTA_SKILL>/scripts/sync_repos.sh" --mode <pull|check> --root "<WORKSPACE_ROOT>"
+```
+
+Exemplo com a skill global (macOS / Linux):
+
+```bash
+bash "$HOME/.gemini/config/skills/sync-repos/scripts/sync_repos.sh" --mode pull --root "<WORKSPACE_ROOT>"
 ```
 
 ## Formato da Resposta
@@ -44,10 +58,18 @@ Responda em **português**, de forma enxuta, apresentando um resumo por reposit�
 - **Nunca** altere a conta ativa global do `gh` CLI (`gh auth switch`).
 - Se algum repositório pessoal falhar no PC corporativo com `Repository not found` (ou erro de permissão), informe o usuário que o repositório pode estar sem `credential.https://github.com.helper` local configurado para a conta `ferrazmichel`.
 
-## Instalação no PC de Casa
+## Instalação Global (PC de Casa / Trabalho)
 
-Após fazer `git pull` do repositório `portfolio-renda-usd`, instale esta skill globalmente no computador executando:
+Após fazer `git pull` do repositório `portfolio-renda-usd`, entre na pasta do repositório e instale esta skill globalmente no computador executando:
+
+**Windows (PowerShell):**
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\.agents\skills\sync-repos\scripts\install_global.ps1"
+```
+
+**macOS / Linux (Bash / Zsh):**
+
+```bash
+bash "./.agents/skills/sync-repos/scripts/install_global.sh"
 ```
