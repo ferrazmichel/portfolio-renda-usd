@@ -71,6 +71,8 @@
 | HQ-04 | Portfólio | Criar skills `/sync-repos` e `/painel-usd` (PowerShell) e ledger `data/receitas_portfolio.json` | ✅ |
 | P2-07 | `us-home-energy-calcs` | Configurar Bing Webmaster Tools + IndexNow (161 URLs submetidas) | ✅ |
 | P3-05 | `us-public-data-actors` | Publicar Actor #7 (SEC EDGAR) e otimizar os 7 Actors (512 MB, categorias e SEO) | ✅ |
+| P3-06 | `us-public-data-actors` | Pesquisar APIs oficiais e especificar Actor #8 (USAspending Federal Contracts & Re-Compete Radar — [`PROPOSTA_ACTOR_8_USASPENDING.md`](PROPOSTA_ACTOR_8_USASPENDING.md)) | ✅ |
+| P3-07 | `us-public-data-actors` | Implementar, testar em casa e publicar Actor #8 (`usaspending-federal-contracts-mcp`) na Apify Store | ⬜ |
 | D1-01 | Distribuição MCP | Submeter os 7 Actors nos diretórios Onda 1 (`mcpservers.org` enviado 🔄; `PulseMCP` pausado; `MCP.so` pago/pulado) | 🔄 |
 | D1-02 | Distribuição MCP | Criar repositório vitrine público `us-gov-mcp-suite` para submissão em diretórios MCP | ✅ |
 | D1-03 | Distribuição MCP | Publicar `us-gov-mcp-suite` no `Glama` (aprovado ✅) e abrir PR em `awesome-remote-mcp-servers` ([PR #5684](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/5684) 🔄) | 🔄 |
