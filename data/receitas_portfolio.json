@@ -23,7 +23,8 @@
     "usitc-hts-tariff-mcp",
     "us-1099-nec-state-compliance-mcp",
     "openfda-recall-device-radar",
-    "sec-edgar-filings-mcp"
+    "sec-edgar-filings-mcp",
+    "usaspending-federal-contracts-mcp"
   ],
   "meses": [
     {
