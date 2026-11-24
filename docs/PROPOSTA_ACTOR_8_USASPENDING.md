@@ -69,7 +69,7 @@ O Actor #8 enriquece automaticamente cada registro retornado pela API com:
 | ID | Etapa | Ação | Status |
 | :--- | :--- | :--- | :--- |
 | A8-01 | Pesquisa & API | Validar concorrência na Store (`448` / líder `41`) e testar endpoint `api.usaspending.gov/api/v2` ao vivo | ✅ |
-| A8-02 | Scaffold & Código | Criar `actors/usaspending-federal-contracts-mcp/` (`src/`, `tests/`, `.actor/`, `Dockerfile`, `README.md` c/ MCP) | ⬜ |
+| A8-02 | Scaffold & Código | Criar `actors/usaspending-federal-contracts-mcp/` (`src/`, `tests/`, `.actor/`, `Dockerfile`, `README.md` c/ MCP) | ✅ |
 | A8-03 | Testes em Casa | Rodar `pytest` + build na Apify CLI (`512 MB`, `PAY_PER_EVENT`) | ⬜ |
 | A8-04 | Publicação | Publicar na Apify Store com categorias + `seoTitle`/`seoDescription` | ⬜ |
 | A8-05 | Catálogo & Vitrine | Atualizar `CATALOGO_ATIVOS.md`, `painel-usd`, `monitor_health.py` e `us-gov-mcp-suite` (8 ferramentas) | ⬜ |
