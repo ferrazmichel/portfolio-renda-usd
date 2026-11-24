@@ -6,18 +6,23 @@
 
 ## 1. Checklist de Execução em Casa (~25–30 min)
 
-1. **Sincronizar workspace:** abrir o Antigravity em casa e rodar `/sync-repos` (para puxar este guia em `portfolio-renda-usd`).
-2. **Versionar o repositório da extensão (recomendado):**
-   - Na pasta `shopify-pixel-catalog-inspector`, conferir o `git status` e subir para um repositório **privado** na sua conta pessoal **`ferrazmichel`** no GitHub (assim o `/sync-repos` passa a sincronizar o Projeto #4 entre casa e trabalho também).
+1. **Sincronizar workspace:** abrir o Antigravity em casa e rodar `/sync-repos` (para puxar este guia em `portfolio-renda-usd` e as atualizações de `shopify-pixel-catalog-inspector`).
+2. **Rodar testes locais em `shopify-pixel-catalog-inspector`:**
+   ```bash
+   npm test
+   ```
 3. **Testar localmente no Chrome (~5 min):**
-   - Abrir `chrome://extensions` → ativar **Modo do desenvolvedor** (*Developer mode*) → **Carregar sem compactação** (*Load unpacked*) apontando para a pasta da extensão.
+   - Abrir `chrome://extensions` → ativar **Modo do desenvolvedor** (*Developer mode*) → **Carregar sem compactação** (*Load unpacked*) apontando para a pasta `shopify-pixel-catalog-inspector`.
    - Testar em 2–3 lojas Shopify públicas dos EUA (ex.: `https://www.allbirds.com`, `https://www.gymshark.com`, `https://www.brooklinen.com`).
    - Confirmar que detecta tema, pixels/IDs, apps, catálogo `/products.json` e exporta CSV.
 4. **Capturar 3 screenshots (`1280×800 px` ou `640×400 px`)** durante esse teste (ver Seção 5).
-5. **Configurar o checkout Pro na Polar.sh (~10 min)** (ver Seção 6) para já ter o link de compra e as chaves `SPPRO-` funcionando antes da publicação.
-6. **Criar conta Developer na Chrome Web Store (`US$ 5` taxa única):**
+5. **Configurar o checkout Pro na Polar.sh (~10 min)** (ver Seção 6) e colar os 3 campos gerados (`checkoutMonthlyUrl`, `checkoutAnnualUrl`, `polarOrganizationId`) em `src/billingConfig.mjs` dentro de `shopify-pixel-catalog-inspector`.
+6. **Gerar o `.zip` final atualizado:**
+   - Windows PowerShell: `powershell -NoProfile -ExecutionPolicy Bypass -File ".\scripts\build_extension.ps1"`
+   - macOS / Linux: `python3 scripts/build_extension.py`
+7. **Criar conta Developer na Chrome Web Store (`US$ 5` taxa única):**
    - Acessar: https://chrome.google.com/webstore/devconsole
-   - Subir `dist/shopify-pixel-catalog-inspector-v1.0.0.zip`, colar os textos das Seções 2, 3 e 4, anexar os screenshots e enviar para revisão.
+   - Subir `dist/shopify-pixel-catalog-inspector-v1.0.0.zip`, colar os textos das Seções 2 e 3, informar a URL da Política de Privacidade já publicada (`https://ferrazmichel.github.io/shoppulse-docs/privacy.html`), anexar os screenshots e enviar para revisão.
 
 ---
 
@@ -90,13 +95,13 @@ O Google Chrome Web Store revisa rigorosamente extensões Manifest V3. Use exata
 
 ---
 
-## 4. Política de Privacidade Pronta (`PRIVACY_POLICY.md`)
+## 4. Política de Privacidade Pública (Já Hospedada no GitHub Pages)
 
-A Chrome Web Store exige uma URL pública de Política de Privacidade.
+- **URL oficial para colar na Chrome Web Store:** `https://ferrazmichel.github.io/shoppulse-docs/privacy.html`
+- **Mini landing page / página de suporte:** `https://ferrazmichel.github.io/shoppulse-docs/`
+- **Repositório público de origem:** `https://github.com/ferrazmichel/shoppulse-docs`
 
-### Opção rápida e gratuita para hospedar em 2 minutos
-1. Criar uma página `/shoppulse-privacy` em um site seu já publicado (ou habilitar GitHub Pages em um repo público mínimo de docs, ex.: `ferrazmichel/shoppulse-docs`, apontando para o arquivo abaixo).
-2. Usar o texto completo abaixo em inglês:
+*(O texto completo abaixo já está publicado em `privacy.html` para consulta rápida.)*
 
 ```markdown
 # Privacy Policy — ShopPulse (Shopify Pixel, App & Catalog Inspector)
@@ -145,8 +150,8 @@ A **Polar.sh** atua como *Merchant of Record* (cuida de impostos/VAT globais aut
 3. Criar 2 planos (preços):
    - **Mensal:** **`$15 / month`**
    - **Anual (ancoragem):** **`$120 / year`** *(equivalente a `$10/mês` — aumenta o caixa imediato)*
-4. Ativar o benefício **License Keys** no produto com prefixo **`SPPRO-`** (compatível com o formato `SPPRO-XXXX-XXXX-XXXX` esperado na extensão).
-5. Copiar o **Checkout Link** da Polar.sh e conferir se o botão *"Upgrade to Pro"* da extensão aponta para esse link antes de gerar o `.zip` final para a Chrome Web Store.
+4. Ativar o benefício **License Keys** no produto com prefixo **`SPPRO-`**.
+5. Copiar os **Checkout Links** (mensal e anual) e o **Organization ID** da Polar.sh e colar em `shopify-pixel-catalog-inspector/src/billingConfig.mjs` (`checkoutMonthlyUrl`, `checkoutAnnualUrl`, `polarOrganizationId`) antes de gerar o `.zip` final.
 
 ---
 
