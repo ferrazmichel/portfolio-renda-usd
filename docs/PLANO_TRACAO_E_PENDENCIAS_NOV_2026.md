@@ -63,10 +63,10 @@
 
 | ID | Frente | Ação Prática | Responsável | Status |
 | :--- | :--- | :--- | :---: | :---: |
-| **TR-01** | ShopPulse | Substituir o campo `Descrição*` na Chrome Web Store pela versão v2 (sem listas de marcas, ver [`KIT_PUBLICACAO_SHOPPULSE.md`](KIT_PUBLICACAO_SHOPPULSE.md)), salvar rascunho e clicar em **Enviar para análise** | Usuário | 🔄 *(Em andamento em 25/11)* |
-| **TR-02** | MCP / GitHub | **Desbloquear merge prioritário do [PR #5684](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/5684):** editar a descrição do PR informando que o badge do Glama já está no `README.md` de `us-gov-mcp-suite` + incluir link do Glama (texto pronto na Seção 5 abaixo) | Usuário | ⬜ *(Pronto para fazer agora — 30s)* |
-| **TR-03** | MCP / Glama | Conferir e-mail de *claim* da listagem no **Glama** (`glama.ai/mcp/connectors/com.apify.mcp/us-gov-mcp-suite`) e verificar se a página já reflete os 8 Actors | Usuário | ⬜ |
-| **TR-04** | HomeEnergyCalcs | Conferir **Google Search Console** e **Bing Webmaster Tools** de `homeenergycalcs.com` (nº de páginas indexadas das 161, impressões, erros de rastreamento) | Usuário | ⬜ |
+| **TR-01** | ShopPulse | Substituir o campo `Descrição*` na Chrome Web Store pela versão v2 (sem listas de marcas, ver [`KIT_PUBLICACAO_SHOPPULSE.md`](KIT_PUBLICACAO_SHOPPULSE.md)), salvar rascunho e clicar em **Enviar para análise** | Usuário | 🔄 *(Reenviado em 25/11 com Descrição v2 — aguardando aprovação da Chrome Web Store)* |
+| **TR-02** | MCP / GitHub | **Desbloquear merge prioritário do [PR #5684](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/5684):** editar a descrição do PR informando que o badge do Glama já está no `README.md` de `us-gov-mcp-suite` + incluir link do Glama (texto pronto na Seção 5 abaixo) | Usuário | ✅ *(25/11 — descrição do PR #5684 atualizada com link/badge Glama + resposta ao punkpeye; aguardando merge)* |
+| **TR-03** | MCP / Glama | Conferir e-mail de *claim* da listagem no **Glama** (`glama.ai/mcp/connectors/com.apify.mcp/us-gov-mcp-suite`) e verificar se a página já reflete os 8 Actors | Usuário | ✅ *(Verificado em 25/11 — ticket #159789607 aberto no Glama; aguardando claim para liberar OAuth/Test Profile e atualizar de 7 para 8 Actors)* |
+| **TR-04** | HomeEnergyCalcs | Conferir **Google Search Console** e **Bing Webmaster Tools** de `homeenergycalcs.com` (nº de páginas indexadas das 161, impressões, erros de rastreamento) | Usuário | ✅ *(Verificado em 25/11 — GSC excelente p/ domínio de 5 dias: 161 URLs processadas no sitemap, 56 HTTPS válidas / 0 erros, 39 breadcrumbs válidos, 98 impressões em 3 dias em curva crescente 0→3→18→77/dia, 90% EUA em 55 páginas das 3 verticais)* |
 | **TR-05** | Portfólio HQ | Sincronizar `AGENTS.md`, `README.md`, `CATALOGO_ATIVOS.md`, `ROTINA_E_BACKLOG_PORTFOLIO.md` e `KIT_DISTRIBUICAO_MCP.md` com o status real dos 8 Actors e do ShopPulse | IA | ✅ *(25/11/2026)* |
 
 ### Fase 1 — Sprint de Tração dos 8 Actors MCP (Dias 2–7 — Zero Código Novo)
@@ -119,3 +119,66 @@ O mantenedor `punkpeye` comentou no [PR #5684](https://github.com/punkpeye/aweso
      ```markdown
      Thanks! The Glama badge is already live in our README (`https://github.com/ferrazmichel/us-gov-mcp-suite`) and I've added the Glama listing link to the PR description as well: https://glama.ai/mcp/connectors/com.apify.mcp/us-gov-mcp-suite
      ```
+
+---
+
+## 6. Material Pronto — Fase 1 (`TR-06` e `TR-07`)
+
+### `TR-06` — Discord Oficial da Apify (`#showcase` ou `#actors-showcase`)
+
+```markdown
+Hey builders! I just shipped a suite of **8 hosted, MCP-ready Actors** wrapping official U.S. government public datasets — all running on lightweight REST/JSON calls (512 MB, no headless browser, zero external API keys required for users):
+
+1. **SEC EDGAR Filings, 8-K & XBRL Financials** (`sec-edgar-filings-mcp`) — `10-K`/`10-Q`/`8-K` decoding + audited US-GAAP XBRL snapshots compressed into ~2 KB `mcp_summary` digests
+2. **USITC HTS Tariff & Landed Cost Calculator** (`usitc-hts-tariff-mcp`) — 10-digit tariff inheritance, Section 301/232, CBP MPF/HMF & `CN` vs `VN` vs `MX` vs `KR` landed cost comparison
+3. **US 1099-NEC 2026 Threshold & State Compliance** (`us-1099-nec-state-compliance-mcp`) — 2026 `$2,000` federal vs `$600–$1,200` state filing rules across all 51 US jurisdictions + 24% backup withholding audit
+4. **openFDA Recall Radar** (`openfda-recall-device-radar`) — unified Class I/II/III recall monitoring across drugs, devices, and food with risk scoring
+5. **OSHA Safety & Compliance** (`osha-safety-compliance-mcp`) — DOL workplace inspections, violations & penalty totals
+6. **EPA ECHO Environmental** (`epa-echo-environmental-mcp`) — CAA/CWA/RCRA compliance & automated facility risk scoring
+7. **FMCSA & USDOT Carrier Safety** (`fmcsa-carrier-safety-mcp`) — carrier vetting (`PASS` to `DO_NOT_USE`), MC/USDOT authority & BIPD insurance
+8. **USAspending Federal Contracts & Re-Compete Radar** (`usaspending-federal-contracts-mcp`) — prime contracts, incumbent NAICS intelligence & expiring contract re-compete alerts
+
+All 8 can be connected in a single Streamable HTTP MCP config via `https://mcp.apify.com`.
+
+- **GitHub Showcase & MCP Config:** https://github.com/ferrazmichel/us-gov-mcp-suite
+- **Apify Store Profile:** https://apify.com/ferraz_michel
+
+Would love feedback on the `mcp_summary` output format and any other US regulatory datasets you'd find useful in AI workflows!
+```
+
+### `TR-07` — Reddit `r/mcp`
+
+- **Title:**
+  ```text
+  I wrapped 8 messy US Government APIs (SEC XBRL, USITC Tariffs, 2026 1099-NEC, openFDA, USAspending, OSHA/EPA/FMCSA) into ~2 KB MCP tools — zero API keys needed
+  ```
+
+- **Body:**
+  ```markdown
+  Government datasets are goldmines for financial, legal, supply-chain, and compliance agents — but raw endpoints are brutal on LLM context windows and brittle in practice:
+
+  - **SEC EDGAR `companyfacts` XBRL** files routinely exceed **4 MB+** per company.
+  - **USITC HTS** 10-digit statistical codes omit duty rates stored on 8-digit parent headings (plus Chapter 99 Section 301/232 + CBP MPF/HMF fees).
+  - **EPA ECHO** requires two-step `QueryID` session orchestration.
+  - **DOL OSHA** endpoints cap at 200 rows without joining violation details.
+  - **Form 1099-NEC (2026)** changed the federal threshold to `$2,000`, while multiple US states kept `$600–$1,200` rules.
+
+  To solve this for Claude Desktop, Cursor, n8n, and LangGraph workflows, I built **US Government Public Data MCP Suite** — 8 hosted Streamable HTTP MCP servers with an `"outputMode": "mcp_summary"` mode that compresses multi-megabyte responses into **~2 KB structured JSON digests** with pre-computed verdicts and metrics.
+
+  **Included tools (zero user API keys required):**
+  1. **SEC EDGAR (`sec-edgar-filings-mcp`)** — 10-K/10-Q/8-K material events + audited US-GAAP snapshots
+  2. **USITC HTS (`usitc-hts-tariff-mcp`)** — 10-digit tariff lookup, USMCA exemptions & CN/VN/MX/KR landed cost comparison
+  3. **US 1099-NEC 2026 (`us-1099-nec-state-compliance-mcp`)** — 50 states + DC compliance & 24% backup withholding check
+  4. **openFDA (`openfda-recall-device-radar`)** — parallel drug, medical device & food recall monitor with severity scoring
+  5. **USAspending (`usaspending-federal-contracts-mcp`)** — federal prime awards & expiring contract re-compete radar
+  6. **DOL OSHA (`osha-safety-compliance-mcp`)** — workplace inspections, violations & penalty totals
+  7. **EPA ECHO (`epa-echo-environmental-mcp`)** — CAA/CWA/RCRA facility environmental risk scores
+  8. **USDOT FMCSA (`fmcsa-carrier-safety-mcp`)** — carrier safety vetting, operating authority & BIPD insurance
+
+  **Transparency note:** The hosted endpoints run on Apify's official MCP gateway (`https://mcp.apify.com`, OAuth + Pay-Per-Event at `$5 / 1k` records, covered by Apify's free monthly tier for testing). All MCP configs (`mcp.json`, Claude Desktop examples, and prompts) are documented in the public showcase repo:
+
+  👉 **GitHub (configs & prompts):** https://github.com/ferrazmichel/us-gov-mcp-suite
+
+  I'd genuinely appreciate technical feedback from people building compliance, finance, or GovCon agents — especially on whether the ~2 KB summary schema leaves out any fields you'd want in the first pass.
+  ```
+
