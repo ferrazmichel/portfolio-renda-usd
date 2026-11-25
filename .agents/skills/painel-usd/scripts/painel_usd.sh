@@ -46,6 +46,7 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
 python3 - "$MODE" "$PORTFOLIO_PATH" "$SCRIPT_DIR" <<'PYEOF'
+from concurrent.futures import ThreadPoolExecutor
 import datetime
 import json
 import os
@@ -188,10 +189,19 @@ def invoke_apify_get(uri: str, token: str):
 
 
 def http_probe_once(url: str, expected_codes, timeout_sec: int = 10):
+    """
+    Faz GET real e encerra assim que os headers da resposta final chegam (TTFB),
+    equivalente ao HttpWebRequest.GetResponse() + Close() do painel_usd.ps1.
+    """
+    follow_redirects = (301 not in expected_codes) and (302 not in expected_codes)
     cmd = [
         "curl",
         "-sS",
         "-g",
+        "-N",
+        "--suppress-connect-headers",
+        "-D",
+        "-",
         "-o",
         "/dev/null",
         "--max-time",
@@ -202,10 +212,8 @@ def http_probe_once(url: str, expected_codes, timeout_sec: int = 10):
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) PortfolioHealthMonitor/1.0",
         "-H",
         "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "-w",
-        "%{http_code}|%{time_total}",
     ]
-    if 301 not in expected_codes and 302 not in expected_codes:
+    if follow_redirects:
         cmd.append("-L")
     cmd.append(url)
 
@@ -214,33 +222,72 @@ def http_probe_once(url: str, expected_codes, timeout_sec: int = 10):
     err_msg = ""
 
     t0 = time.monotonic()
+    proc = None
     try:
-        proc = subprocess.run(
+        proc = subprocess.Popen(
             cmd,
-            capture_output=True,
-            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             env=CURL_ENV,
-            timeout=timeout_sec + 5,
         )
-        raw = (proc.stdout or "").strip()
-        if "|" in raw:
-            code_part, time_part = raw.split("|", 1)
-            try:
-                status_code = int(code_part)
-            except ValueError:
-                status_code = 0
-            try:
-                latency_ms = round(float(time_part) * 1000.0, 1)
-            except ValueError:
+        block_status = 0
+        block_status_line = ""
+        while True:
+            line_bytes = proc.stdout.readline()
+            if not line_bytes:
+                break
+            line = line_bytes.decode("latin-1", errors="replace").strip()
+            if line.upper().startswith("HTTP/"):
+                block_status_line = line
+                parts = line.split()
+                if len(parts) >= 2:
+                    try:
+                        block_status = int(parts[1])
+                    except ValueError:
+                        block_status = 0
+            elif line == "" and block_status > 0:
+                is_proxy_connect = (
+                    block_status == 200
+                    and "connection established" in block_status_line.lower()
+                )
+                is_informational = 100 <= block_status < 200
+                is_redirect = follow_redirects and block_status in (301, 302, 303, 307, 308)
+
+                status_code = block_status
+                if is_proxy_connect or is_informational or is_redirect:
+                    block_status = 0
+                    block_status_line = ""
+                    continue
+                # Headers finais recebidos: mede TTFB e encerra sem baixar o corpo inteiro
                 latency_ms = round((time.monotonic() - t0) * 1000.0, 1)
-        else:
+                break
+
+        if latency_ms == 0.0:
             latency_ms = round((time.monotonic() - t0) * 1000.0, 1)
 
-        if proc.returncode != 0 and status_code == 0:
-            err_msg = (proc.stderr or "").strip() or f"curl exit {proc.returncode}"
+        if proc.poll() is None:
+            try:
+                proc.terminate()
+            except ProcessLookupError:
+                pass
+
+        try:
+            _, stderr_bytes = proc.communicate(timeout=2)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            _, stderr_bytes = proc.communicate()
+
+        if status_code == 0 and proc.returncode != 0:
+            err_msg = stderr_bytes.decode("utf-8", errors="replace").strip() or f"curl exit {proc.returncode}"
     except Exception as exc:
         latency_ms = round((time.monotonic() - t0) * 1000.0, 1)
         err_msg = str(exc)
+        if proc is not None and proc.poll() is None:
+            try:
+                proc.kill()
+                proc.wait(timeout=2)
+            except Exception:
+                pass
 
     healthy = status_code in expected_codes
     if not healthy and not err_msg:
@@ -417,8 +464,15 @@ if mode in ("all", "receita"):
     public_actors = 0
     private_or_unpub = 0
 
-    for target in actor_ids:
-        act_res = invoke_apify_get(f"https://api.apify.com/v2/acts/{target['query_id']}", apify_token)
+    with ThreadPoolExecutor(max_workers=min(8, max(1, len(actor_ids)))) as pool:
+        actor_results = list(
+            pool.map(
+                lambda t: (t, invoke_apify_get(f"https://api.apify.com/v2/acts/{t['query_id']}", apify_token)),
+                actor_ids,
+            )
+        )
+
+    for target, act_res in actor_results:
         if not act_res["ok"]:
             if act_res["status_code"] == 404:
                 private_or_unpub += 1
@@ -489,17 +543,22 @@ if mode in ("all", "saude"):
         {"category": "Apify Store", "name": "Actor #5 US 1099-NEC", "url": "https://apify.com/ferraz_michel/us-1099-nec-state-compliance-mcp", "expected": [200], "critical": True},
         {"category": "Apify Store", "name": "Actor #6 openFDA", "url": "https://apify.com/ferraz_michel/openfda-recall-device-radar", "expected": [200], "critical": True},
         {"category": "Apify Store", "name": "Actor #7 SEC EDGAR", "url": "https://apify.com/ferraz_michel/sec-edgar-filings-mcp", "expected": [200], "critical": True},
+        {"category": "Apify Store", "name": "Actor #8 USAspending", "url": "https://apify.com/ferraz_michel/usaspending-federal-contracts-mcp", "expected": [200], "critical": True},
         {"category": "APIs Gov EUA", "name": "US EPA ECHO REST", "url": "https://echodata.epa.gov/echo/echo_rest_services.get_facilities?output=JSON&p_st=TX", "expected": [200], "critical": False},
         {"category": "APIs Gov EUA", "name": "US FDA openFDA", "url": "https://api.fda.gov/device/enforcement.json?limit=1", "expected": [200], "critical": False},
         {"category": "APIs Gov EUA", "name": "USITC HTS REST", "url": "https://hts.usitc.gov/reststop/search?keyword=8507.60", "expected": [200], "critical": False},
         {"category": "APIs Gov EUA", "name": "US DOL API Gateway", "url": "https://apiprod.dol.gov/v4/get/OSHA/inspection/json?limit=1", "expected": [200, 401], "critical": False},
     ]
 
+    with ThreadPoolExecutor(max_workers=9) as pool:
+        probe_results = list(
+            pool.map(lambda t: (t, http_probe_with_retry(t["url"], t["expected"])), targets)
+        )
+
     healthy_count = 0
     total_targets = len(targets)
 
-    for t in targets:
-        probe = http_probe_with_retry(t["url"], t["expected"])
+    for t, probe in probe_results:
         if probe["is_healthy"]:
             healthy_count += 1
             badge = "LENTO" if probe["latency_ms"] >= 1000 else "ONLINE"

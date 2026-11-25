@@ -385,6 +385,7 @@ if ($Mode -eq 'all' -or $Mode -eq 'saude') {
         @{ Category = 'Apify Store'; Name = 'Actor #5 US 1099-NEC'; Url = 'https://apify.com/ferraz_michel/us-1099-nec-state-compliance-mcp'; Expected = @(200); Critical = $true },
         @{ Category = 'Apify Store'; Name = 'Actor #6 openFDA'; Url = 'https://apify.com/ferraz_michel/openfda-recall-device-radar'; Expected = @(200); Critical = $true },
         @{ Category = 'Apify Store'; Name = 'Actor #7 SEC EDGAR'; Url = 'https://apify.com/ferraz_michel/sec-edgar-filings-mcp'; Expected = @(200); Critical = $true },
+        @{ Category = 'Apify Store'; Name = 'Actor #8 USAspending'; Url = 'https://apify.com/ferraz_michel/usaspending-federal-contracts-mcp'; Expected = @(200); Critical = $true },
         @{ Category = 'APIs Gov EUA'; Name = 'US EPA ECHO REST'; Url = 'https://echodata.epa.gov/echo/echo_rest_services.get_facilities?output=JSON&p_st=TX'; Expected = @(200); Critical = $false },
         @{ Category = 'APIs Gov EUA'; Name = 'US FDA openFDA'; Url = 'https://api.fda.gov/device/enforcement.json?limit=1'; Expected = @(200); Critical = $false },
         @{ Category = 'APIs Gov EUA'; Name = 'USITC HTS REST'; Url = 'https://hts.usitc.gov/reststop/search?keyword=8507.60'; Expected = @(200); Critical = $false },
