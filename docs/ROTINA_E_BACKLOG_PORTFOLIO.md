@@ -66,14 +66,15 @@
 | P3-03 | `us-public-data-actors` | Desenvolver e publicar Actor #6 (`openfda-recall-device-radar`) | ✅ |
 | P3-04 | `us-public-data-actors` | Desenvolver e fazer deploy do Actor #7 (`sec-edgar-filings-mcp`) | ✅ |
 | P4-01 | `shopify-pixel-catalog-inspector` | Construir e empacotar Extensão Chrome MV3 para Shopify EUA (`dist/*.zip`) | ✅ |
-| P4-02 | `shopify-pixel-catalog-inspector` | Testar no Chrome local (`chrome://extensions`), configurar Polar.sh e publicar na Chrome Web Store usando `docs/KIT_PUBLICACAO_SHOPPULSE.md` | ⬜ |
-| P4-03 | `shopify-pixel-catalog-inspector` | Executar plano de divulgação pós-aprovação (`AlternativeTo`, `SaaSHub`, `Product Hunt`, Reddit — ver `docs/KIT_PUBLICACAO_SHOPPULSE.md`) | ⬜ |
-| HQ-04 | Portfólio | Criar skills `/sync-repos` e `/painel-usd` (PowerShell) e ledger `data/receitas_portfolio.json` | ✅ |
+| P4-02 | `shopify-pixel-catalog-inspector` | Testar no Chrome local (`chrome://extensions`), configurar Polar.sh (✅) e publicar na Chrome Web Store usando `docs/KIT_PUBLICACAO_SHOPPULSE.md` (1ª submissão 24/11 rejeitada por *keyword spam* — reenvio descrição v2) | 🔄 |
+| P4-03 | `shopify-pixel-catalog-inspector` | Executar plano de divulgação pós-aprovação (`AlternativeTo`, `SaaSHub`, `Product Hunt`, Reddit — ver `docs/KIT_PUBLICACAO_SHOPPULSE.md` e `docs/PLANO_TRACAO_E_PENDENCIAS_NOV_2026.md`) | ⬜ |
+| HQ-04 | Portfólio | Criar skills `/sync-repos` e `/painel-usd` (Windows PowerShell + macOS/Linux Bash) e ledger `data/receitas_portfolio.json` | ✅ |
 | P2-07 | `us-home-energy-calcs` | Configurar Bing Webmaster Tools + IndexNow (161 URLs submetidas) | ✅ |
 | P3-05 | `us-public-data-actors` | Publicar Actor #7 (SEC EDGAR) e otimizar os 7 Actors (512 MB, categorias e SEO) | ✅ |
 | P3-06 | `us-public-data-actors` | Pesquisar APIs oficiais e especificar Actor #8 (USAspending Federal Contracts & Re-Compete Radar — [`PROPOSTA_ACTOR_8_USASPENDING.md`](PROPOSTA_ACTOR_8_USASPENDING.md)) | ✅ |
-| P3-07 | `us-public-data-actors` | Implementar código/testes (✅) e rodar `pytest` + publicar Actor #8 (`usaspending-federal-contracts-mcp`) na Apify Store em casa | 🔄 |
-| D1-01 | Distribuição MCP | Submeter os 7 Actors nos diretórios Onda 1 (`mcpservers.org` enviado 🔄; `PulseMCP` pausado; `MCP.so` pago/pulado) | 🔄 |
-| D1-02 | Distribuição MCP | Criar repositório vitrine público `us-gov-mcp-suite` para submissão em diretórios MCP | ✅ |
-| D1-03 | Distribuição MCP | Publicar `us-gov-mcp-suite` no `Glama` (aprovado ✅) e abrir PR em `awesome-remote-mcp-servers` ([PR #5684](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/5684) 🔄) | 🔄 |
-| F2-01 | Fase 2 (Paralelo IA) | Aprofundar pesquisa de nichos da Etsy EUA ([`ESTUDO_ETSY_PLANILHAS_EUA.md`](ESTUDO_ETSY_PLANILHAS_EUA.md) ✅) e afiliados SaaS B2B para decisão futura | 🔄 |
+| P3-07 | `us-public-data-actors` | Implementar código/testes, rodar `pytest` e publicar Actor #8 (`usaspending-federal-contracts-mcp`) na Apify Store | ✅ |
+| D1-01 | Distribuição MCP | Submeter suíte nos diretórios Onda 1 (`mcpservers.org` enviado 🔄; `PulseMCP` pausado; `MCP.so` pago/pulado) | 🔄 |
+| D1-02 | Distribuição MCP | Criar repositório vitrine público `us-gov-mcp-suite` (atualizado para 8 Actors) para submissão em diretórios MCP | ✅ |
+| D1-03 | Distribuição MCP | Publicar `us-gov-mcp-suite` no `Glama` (aprovado ✅) e abrir PR em `awesome-remote-mcp-servers` ([PR #5684](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/5684) — CI verde; mencionar badge Glama na descrição do PR para priorizar merge) | 🔄 |
+| D1-04 | Tração & Distribuição | Executar ciclo focado de 21 dias sem novos produtos (ver [`PLANO_TRACAO_E_PENDENCIAS_NOV_2026.md`](PLANO_TRACAO_E_PENDENCIAS_NOV_2026.md) — `TR-01` a `TR-19`) | 🔄 |
+| F2-01 | Fase 2 (Paralelo IA) | Aprofundar pesquisa de nichos da Etsy EUA ([`ESTUDO_ETSY_PLANILHAS_EUA.md`](ESTUDO_ETSY_PLANILHAS_EUA.md) ✅) e aguardar Checkpoint Dia 21 (`TR-19`) antes de iniciar execução | 🔄 |

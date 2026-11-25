@@ -33,7 +33,11 @@ Priorizamos **constância/recorrência e probabilidade de evolução**, e não v
 | Arquivo | Conteúdo |
 | :--- | :--- |
 | [`AGENTS.md`](AGENTS.md) | Contexto permanente, regras de GitHub pessoal/corporativo e divisão de papéis IA vs. usuário |
+| [`docs/PLANO_TRACAO_E_PENDENCIAS_NOV_2026.md`](docs/PLANO_TRACAO_E_PENDENCIAS_NOV_2026.md) | **Guia ativo (21 dias):** diagnóstico de receita, política de canais e checklist completo de conferências e divulgação (`TR-01` a `TR-19`) |
 | [`docs/ESTRATEGIA_E_ESTUDO_MERCADO_2026.md`](docs/ESTRATEGIA_E_ESTUDO_MERCADO_2026.md) | Estudo completo de 19/11/2026: matemática do dólar, armadilhas descartadas, comparativo das 5 trilhas e escolha dos 2 projetos |
+| [`docs/KIT_DISTRIBUICAO_MCP.md`](docs/KIT_DISTRIBUICAO_MCP.md) | Fichas em inglês, snippets MCP e controle de submissões da suíte de 8 Actors nos diretórios |
+| [`docs/KIT_PUBLICACAO_SHOPPULSE.md`](docs/KIT_PUBLICACAO_SHOPPULSE.md) | Checklist, textos v2 da Chrome Web Store, Polar.sh e plano de tração pós-aprovação do ShopPulse |
+| [`docs/ESTUDO_ETSY_PLANILHAS_EUA.md`](docs/ESTUDO_ETSY_PLANILHAS_EUA.md) | Estudo de viabilidade e plano de lançamento da loja de planilhas B2B/1099 na Etsy EUA (Fase 2) |
 | [`docs/RADAR_IDEIAS_FASE_2.md`](docs/RADAR_IDEIAS_FASE_2.md) | Banco de ideias paralelas para pesquisa futura (Etsy EUA, Extensão Chrome Shopify, Diretório B2B + Afiliados, Micro-Utilitários HTS/1099 e FinançasCloud) |
 | [`docs/PAGAMENTOS_E_CONFORMIDADE_EXTERIOR.md`](docs/PAGAMENTOS_E_CONFORMIDADE_EXTERIOR.md) | Como receber no Brasil em dólar em 2026 (Wise, Payoneer, AdSense, Mediavine, Paddle, Polar.sh — e por que evitar Lemon Squeezy) + alertas fiscais/estatutários |
 | [`docs/ROTINA_E_BACKLOG_PORTFOLIO.md`](docs/ROTINA_E_BACKLOG_PORTFOLIO.md) | Cadência para 1–2 h/dia no trabalho + execução em casa nos feriados/fins de semana e backlog mestre |

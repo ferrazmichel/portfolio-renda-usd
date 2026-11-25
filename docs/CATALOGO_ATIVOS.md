@@ -15,7 +15,8 @@
 | **Actor US 1099-NEC Compliance MCP** | API / MCP Tool | Apify Store (Contabilidade EUA, CPAs, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor openFDA Recall Radar MCP** | API / MCP Tool | Apify Store (Saúde, Jurídico, Supply Chain, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
 | **Actor SEC EDGAR Filings & XBRL MCP** | API / MCP Tool | Apify Store (Finanças EUA, Equity Research, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
-| **ShopPulse (Extensão Chrome Shopify)** | Chrome Extension MV3 | Chrome Web Store (Lojistas DTC / Dropshippers EUA) | 🟡 Pacote `.zip` Pronto | Freemium + Pro (US$ 15/mês Polar/LemonSqueezy) | US$ 5,00 (taxa única Web Store) |
+| **Actor USAspending Federal Contracts MCP** | API / MCP Tool | Apify Store (GovCon, Federal BD, Re-Compete, IA) | 🟢 Publicado | Pay-Per-Event (PPE): $5.00/1k | US$ 0,00 (sob demanda) |
+| **ShopPulse (Extensão Chrome Shopify)** | Chrome Extension MV3 | Chrome Web Store (Lojistas DTC / Dropshippers EUA) | 🟡 Submetido (reenvio descrição v2 🔄) | Freemium + Pro (US$ 15/mês ou US$ 120/ano Polar.sh) | US$ 5,00 (taxa única paga) |
 | **HomeEnergyCalcs** | Portal Web (Programmatic SEO) | Tráfego Orgânico Google EUA | 🟢 Online (161 páginas / 3 verticais) | Ads Programáticos (Mediavine) + Afiliados | ~US$ 0,87/mês (domínio anualizado) |
 
 ---

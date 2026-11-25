@@ -135,4 +135,4 @@ Diretórios como **Glama** (`https://glama.ai/mcp/servers`), **Smithery** (`http
 | Criar repositório vitrine público `us-gov-mcp-suite` | GitHub (`ferrazmichel`) | Onda 2 | ✅ |
 | Registrar `Hosted endpoint` da suíte | Glama (`glama.ai/mcp/connectors/com.apify.mcp/us-gov-mcp-suite`) | Onda 2 | ✅ *(Aprovado e no ar em 23/11/2026; badge no README; e-mail de claim enviado)* |
 | Registrar repositório vitrine | Smithery (`smithery.ai`) | Onda 2 | ⬜ *(Proxy de terceiros descontinuado em 31/10/2026 — descartado)* |
-| Abrir PR em lista curada | `punkpeye/awesome-remote-mcp-servers` ([PR #5684](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/5684)) | Onda 2 | 🔄 *(Aberto em 23/11/2026 como `ferrazmichel` — aguardando CI/merge)* |
+| Abrir PR em lista curada | `punkpeye/awesome-remote-mcp-servers` ([PR #5684](https://github.com/punkpeye/awesome-remote-mcp-servers/pull/5684)) | Onda 2 | 🔄 *(CI verde + sem conflitos em 25/11/2026; `punkpeye` pediu mencionar o badge/link do Glama na descrição do PR para priorizar merge — ação `TR-02`)* |

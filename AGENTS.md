@@ -1,7 +1,8 @@
 # AGENTS.md — Contexto Permanente do Portfólio de Renda Online em Dólar
 
 > **Leia este arquivo antes de propor qualquer nova ação, pesquisa ou projeto neste portfólio.**  
-> Última atualização: 23/11/2026.
+> Última atualização: 25/11/2026.  
+> **Guia ativo do ciclo atual (Tração & Distribuição — 21 dias):** [`docs/PLANO_TRACAO_E_PENDENCIAS_NOV_2026.md`](docs/PLANO_TRACAO_E_PENDENCIAS_NOV_2026.md)
 
 ---
 
@@ -24,7 +25,7 @@
 - **Regra rígida de Git/GitHub no trabalho:**
   - **Nunca** usar o `gh` CLI ou tokens corporativos (`michel-ferraz_sefazes`) para criar ou publicar repositórios deste portfólio.
   - Todos os repositórios pessoais devem ter `user.name = ferrazmichel`, `user.email = ferrazmichel@gmail.com` e remote apontando para `https://ferrazmichel@github.com/ferrazmichel/<repo>.git` com `credential.https://github.com.helper` local configurado para `--user ferrazmichel` (mantendo `michel-ferraz_sefazes` como conta ativa global).
-  - Skills globais operacionais no Antigravity (sem Python/Node): `/sync-repos` (sincronização multi-PC) e `/painel-usd` (receitas em `data/receitas_portfolio.json`, câmbio, Apify e uptime dos 17 ativos).
+  - Skills globais operacionais no Antigravity (Windows PowerShell e macOS/Linux Bash): `/sync-repos` (sincronização multi-PC) e `/painel-usd` (receitas em `data/receitas_portfolio.json`, câmbio, Apify ao vivo e uptime dos 18 alvos).
 - **Estilo do negócio desejado:**
   - Produtos digitais 100% *self-service* (sem reuniões de venda, sem atendimento manual em WhatsApp, sem operação artesanal recorrente).
   - Distribuição embutida (marketplaces com busca própria ou SEO programático de cauda longa em inglês), evitando depender de presença em câmera ou tráfego pago desde o dia 1.
@@ -38,9 +39,11 @@
 
 | Repositório | Papel | Status | Mercado / Moeda |
 | :--- | :--- | :--- | :--- |
-| [`portfolio-renda-usd`](../portfolio-renda-usd) | HQ central, tese, pesquisa de mercado, pagamentos, radar Fase 2 e rotina | Ativo (Documentação) | Global / Estratégia |
-| [`us-public-data-actors`](../us-public-data-actors) | **Projeto #1:** Portfólio de Apify Actors + ferramentas MCP com dados públicos oficiais dos EUA | Ativo (MVP em scaffold) | B2B Global + Agentes IA (US\$) |
-| [`us-home-energy-calcs`](../us-home-energy-calcs) | **Projeto #2:** Hub de calculadoras de energia residencial dos EUA (SEO programático + AdSense/Journey) | Ativo (MVP em scaffold) | EUA Residencial (US\$) |
+| [`portfolio-renda-usd`](../portfolio-renda-usd) | HQ central, tese, plano de tração, pagamentos, radar Fase 2 e rotina | Ativo (Documentação & Monitor) | Global / Estratégia |
+| [`us-public-data-actors`](../us-public-data-actors) | **Projeto #1:** Portfólio de Apify Actors + ferramentas MCP com dados públicos oficiais dos EUA | **8 Actors publicados** na Apify Store (PPE `$5/1k`) | B2B Global + Agentes IA (US\$) |
+| [`us-gov-mcp-suite`](../us-gov-mcp-suite) | Vitrine pública no GitHub da suíte MCP (8 Actors) para diretórios (`Glama`, `mcpservers.org`, `awesome-remote-mcp-servers`) | **Público** (Glama aprovado ✅) | B2B Global / MCP |
+| [`us-home-energy-calcs`](../us-home-energy-calcs) | **Projeto #2:** Hub de calculadoras de energia residencial dos EUA (SEO programático + AdSense/Journey) | **Online** (`homeenergycalcs.com`, 161 URLs, GA4/GSC/Bing) | EUA Residencial (US\$) |
+| [`shopify-pixel-catalog-inspector`](../shopify-pixel-catalog-inspector) | **Projeto #4 (`ShopPulse`):** Extensão Chrome MV3 inspetora de lojas Shopify + checkout Polar.sh (`$15/mês`, `$120/ano`) | **Submetida** na Chrome Web Store (reenvio descrição v2 🔄) | Lojistas DTC / Agências EUA (US\$) |
 | [`controle_orcamento`](../controle_orcamento) | **Frente paralela pré-existente:** SaaS *FinançasCloud* (orçamento + investimentos) | Paralelo / Avaliar separadamente | Brasil (R\$) |
 
 ---
