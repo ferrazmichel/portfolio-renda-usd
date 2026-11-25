@@ -76,7 +76,7 @@
 | **TR-06** | MCP / Apify | Redigir e publicar apresentação da suíte `us-gov-mcp-suite` (8 Actors MCP) no **Discord oficial da Apify (`#showcase`)** | IA (texto) + Usuário (post) | ✅ *(25/11 — postado em `#actor-promotion` no Discord Apify; versão complementar p/ `#ai-and-mcp` pronta)* |
 | **TR-07** | MCP / Reddit | Redigir e publicar post técnico *"Show, Don't Sell"* em **`r/mcp`** destacando o problema resolvido (`outputMode: "mcp_summary"` ~2 KB, zero API keys, 8 fontes oficiais EUA) | IA (texto) + Usuário (post) | ✅ *(25/11 — publicado em `r/mcp` com flair `showcase` por `u/ai-and-mcp-developer`)* |
 | **TR-08** | MCP / Reddit | Redigir e publicar post prático em **`r/ClaudeAI`** mostrando casos reais prontos (SEC EDGAR XBRL, Tarifas USITC China vs Vietnã vs México, 1099-NEC 2026 e USAspending) | IA (texto) + Usuário (post) | ⬜ |
-| **TR-09** | MCP / Diretórios | Submeter `us-gov-mcp-suite` em mais **2 listas/diretórios gratuitos de MCP** no GitHub (`punkpeye/awesome-mcp-servers`, `appcypher/awesome-mcp-servers` ou `wong2/awesome-mcp-servers`) e conferir revisão do `mcpservers.org` | IA (PR/texto) + Usuário | 🔄 *(25/11 — PRs prontos na Seção 7 para enviar em 2 min; `wong2` redireciona ao `mcpservers.org`)* |
+| **TR-09** | MCP / Diretórios | Submeter `us-gov-mcp-suite` em mais **2 listas/diretórios gratuitos de MCP** no GitHub (`punkpeye/awesome-mcp-servers`, `jaw9c/awesome-remote-mcp-servers`) e conferir revisão do `mcpservers.org` | IA (PR/texto) + Usuário | ✅ *(25/11 — abertos [PR #20727](https://github.com/punkpeye/awesome-mcp-servers/pull/20727) e [PR #2813](https://github.com/jaw9c/awesome-remote-mcp-servers/pull/2813); `appcypher` arquivado e `wong2` redireciona ao `mcpservers.org`)* |
 | **TR-10** | MCP / SEO Dev | Escrever e publicar **1 artigo técnico evergreen no Dev.to** (em inglês) com tutorial passo a passo conectando Claude Desktop / Cursor / n8n aos Actors SEC EDGAR + USITC Tariffs + USAspending | IA (artigo) + Usuário (publicar) | ✅ *(25/11 — [publicado no Dev.to](https://dev.to/ferrazmichel/how-to-connect-claude-cursor-n8n-to-8-official-us-government-apis-via-mcp-without-blowing-up-1dd2) com tags `#mcp`, `#ai`, `#apify`, `#programming`)* |
 | **TR-11** | MCP / Automação | Montar **1 workflow template simples em n8n** (JSON pronto) usando 1 Actor de alto apelo (ex.: alerta semanal de recalls openFDA ou eventos 8-K da SEC) e compartilhar em `r/n8n` / n8n Community | IA (template + post) + Usuário | 🔄 *(25/11 — JSON pronto em `us-gov-mcp-suite/examples/n8n-openfda-class1-recall-alert.json` + post pronto na Seção 7)* |
 | **TR-12** | Medição | Executar `/painel-usd` ao final da semana para registrar a evolução de usuários externos e runs nos 8 Actors | IA + Usuário | ⬜ |
@@ -334,19 +334,19 @@ Would love feedback on the `mcp_summary` output format and any other US regulato
    - Zero external API keys required from users + token-efficient `~2 KB` `mcp_summary` output mode.
    ```
 
-#### PR #2 — `appcypher/awesome-mcp-servers`
-1. Acesse logado como `ferrazmichel`: https://github.com/appcypher/awesome-mcp-servers/edit/main/README.md
-2. Localize a seção `## 🧬 <a name="research-data"></a>Research & Data` (`Ctrl + F`: `research-data`) e adicione ao final do bloco (antes de `<br />`):
+#### PR #2 — `jaw9c/awesome-remote-mcp-servers` *(substituiu `appcypher`, arquivado em Ago/2026 — [PR #2813 aberto em 25/11](https://github.com/jaw9c/awesome-remote-mcp-servers/pull/2813))*
+1. Acesse logado como `ferrazmichel`: https://github.com/jaw9c/awesome-remote-mcp-servers/edit/main/README.md
+2. Na tabela **`## Remote MCP Server List`**, em ordem alfabética (letra `U`), adicione:
    ```markdown
-   - <img src="https://raw.githubusercontent.com/ferrazmichel/us-gov-mcp-suite/main/assets/icons/sec-edgar-filings-mcp.png" height="14"/> [US Gov Public Data MCP Suite](https://github.com/ferrazmichel/us-gov-mcp-suite) - Hosted Streamable HTTP MCP suite wrapping 8 official US government APIs (SEC EDGAR XBRL, USITC Tariffs, 2026 1099-NEC, USAspending Contracts, openFDA, OSHA, EPA ECHO, FMCSA) with zero API keys required.
+   | US Gov Public Data Suite | Government & Finance Data | `https://mcp.apify.com/?actors=ferraz_michel/sec-edgar-filings-mcp,ferraz_michel/usitc-hts-tariff-mcp,ferraz_michel/us-1099-nec-state-compliance-mcp,ferraz_michel/openfda-recall-device-radar,ferraz_michel/osha-safety-compliance-mcp,ferraz_michel/epa-echo-environmental-mcp,ferraz_michel/fmcsa-carrier-safety-mcp,ferraz_michel/usaspending-federal-contracts-mcp` | OAuth2.1 & API Key | [Michel Ferraz](https://github.com/ferrazmichel/us-gov-mcp-suite) |
    ```
 3. **Commit / PR Title:**
    ```text
-   Add US Gov Public Data MCP Suite under Research & Data
+   Add US Gov Public Data Suite (8 hosted US regulatory & finance MCP tools)
    ```
 4. **PR Description:**
    ```markdown
-   Adds **US Gov Public Data MCP Suite** (`https://github.com/ferrazmichel/us-gov-mcp-suite`) under **Research & Data** — 8 hosted MCP tools for SEC EDGAR, USITC HTS tariffs, Form 1099-NEC compliance, USAspending federal contracts, openFDA recalls, OSHA, EPA ECHO, and FMCSA with compact `mcp_summary` digests.
+   Adds **US Gov Public Data Suite** (`https://github.com/ferrazmichel/us-gov-mcp-suite`), a hosted Streamable HTTP MCP suite on Apify (`mcp.apify.com`) providing token-efficient (`~2 KB`) access to 8 official US government datasets (SEC EDGAR XBRL, USITC HTS Tariffs, 2026 Form 1099-NEC, USAspending Federal Contracts, openFDA Recalls, DOL OSHA, EPA ECHO, and USDOT FMCSA) with zero external API keys required.
    ```
 
 ---
