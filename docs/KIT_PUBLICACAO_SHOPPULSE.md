@@ -35,31 +35,35 @@
 
 - **Short Summary** *(128 / 132 caracteres)*:
   ```text
-  Inspect any Shopify store in 1 click: detect 12 ad pixels & IDs, 20+ apps, theme, Shopify Plus signals & export products to CSV.
+  Inspect any Shopify store in one click: see its theme, marketing pixels, installed apps, and catalog stats, then export to CSV.
   ```
 
 - **Category:** `Workflow & Planning` *(alternativa: `Developer Tools`)*
 - **Language:** `English (United States)`
 
-- **Detailed Description** *(copiar e colar inteiro)*:
+- **Detailed Description** *(copiar e colar inteiro — versão v2 corrigida após rejeição "Yellow Argon / Keyword Spam" de 25/11/2026)*:
+
+  > [!WARNING]
+  > **Não listar nomes de marcas em sequência** (pixels, apps). A 1ª submissão foi rejeitada por *keyword stuffing* exatamente pelas listas de 12 pixels e 11 apps. Descreva **categorias**, não marcas.
+
   ```text
-  ShopPulse is a lightweight, read-only Chrome Extension (Manifest V3) built for e-commerce founders, DTC marketers, media buyers, and Shopify agencies to audit any Shopify storefront in one click.
+  ShopPulse is a lightweight, read-only Chrome extension that helps e-commerce founders, marketers, and agencies understand how any Shopify storefront is set up — in one click.
 
-  WHAT SHOPPULSE INSPECTS INSTANTLY:
-  • Store & Platform Identity: Detects permanent *.myshopify.com domain, active Shopify theme name & ID, currency, country, and Shopify Plus signals.
-  • 12 Ad Pixels & Attribution IDs: Extracts active tracking IDs for Meta (Facebook) Pixel, TikTok Pixel, Google Analytics 4 (GA4), Google Tag Manager (GTM), Pinterest Tag, Snapchat Pixel, Microsoft Clarity, Klaviyo, Triple Whale, Northbeam, Elevar, and Postscript.
-  • 20+ Installed Shopify Apps: Identifies popular review, subscription, upsell, loyalty, SMS, helpdesk, and search apps (Judge.me, Loox, Yotpo, Recharge, Klaviyo, Gorgias, Attentive, Privy, Smile.io, Shogun, Rebuy, and more).
-  • Live Catalog & Pricing Analyzer: Reads the storefront's public /products.json feed to summarize product count, price range (min/avg/max), top vendors, and product types.
-  • 1-Click CSV & JSON Export: Export clean product catalog data (title, handle, vendor, product type, SKU, price, compare-at price, availability, tags, URL) directly to CSV or JSON.
+  WHAT YOU GET
+  • Store overview: see the store's permanent Shopify domain, active theme, currency, country, and whether it shows signs of running on Shopify Plus.
+  • Marketing pixel check: see which advertising and analytics pixels are active on the page, along with their public tracking IDs.
+  • Installed app detection: see which categories of apps the store uses, such as product reviews, subscriptions, upsells, loyalty programs, SMS marketing, and customer support.
+  • Catalog and pricing summary: get the product count, price range, top vendors, and product types from the store's public product feed.
+  • Export: download the public product catalog as a CSV or JSON file for your own research.
 
-  BUILT FOR SPEED & PRIVACY:
-  • 100% client-side execution — runs only when you click the extension icon on the active tab.
-  • Minimal permissions (activeTab, scripting, storage) with zero broad <all_urls> host access.
-  • Zero background tracking, zero external telemetry, and zero remote code execution.
+  PRIVACY FIRST
+  • Runs only when you click the extension icon, and only on the tab you are viewing.
+  • Uses minimal permissions and does not request access to all websites.
+  • No background tracking, no analytics, and no remote code. All processing happens in your browser.
 
-  FREE vs. PRO:
-  • Free Plan: Unlimited store inspections (theme, pixels, IDs, apps, catalog summary) + CSV catalog export up to 25 product rows.
-  • ShopPulse Pro ($15/month): Unlocks unlimited product catalog CSV exports and full structured JSON exports via license key (SPPRO-XXXX-XXXX-XXXX).
+  FREE AND PRO
+  • Free: unlimited store inspections and CSV export of up to 25 products.
+  • Pro ($15/month or $120/year): unlimited CSV exports and full JSON exports, activated with a license key.
   ```
 
 ---
@@ -180,7 +184,7 @@ A **Polar.sh** atua como *Merchant of Record* (cuida de impostos/VAT globais aut
 | SP-03 | GitHub (Casa) | Subir `shopify-pixel-catalog-inspector` para repo privado `ferrazmichel` | ⬜ |
 | SP-04 | Teste Local & Prints | Testar em `chrome://extensions` e capturar 3 screenshots `1280×800` | ⬜ |
 | SP-05 | Pagamentos | Criar produto `ShopPulse Pro` (`$15/mês`, chave `SPPRO-`) na Polar.sh e linkar na extensão | ⬜ |
-| SP-06 | Publicação | Pagar taxa única de `$5`, publicar Política de Privacidade e enviar `.zip` na Chrome Web Store | ⬜ |
+| SP-06 | Publicação | Pagar taxa única de `$5`, publicar Política de Privacidade e enviar `.zip` na Chrome Web Store | 🔄 *(1ª submissão em 24/11/2026 rejeitada por "Yellow Argon / Keyword Spam" — descrição v2 sem listas de marcas pronta para reenvio)* |
 | SP-07 | Divulgação Pós-Aprovação | Cadastrar ShopPulse no `AlternativeTo` (alternativa a Koala Inspector / PPSPY) e `SaaSHub` | ⬜ |
 | SP-08 | Divulgação Pós-Aprovação | Preparar textos e publicar lançamento gratuito no `Product Hunt` | ⬜ |
 | SP-09 | Divulgação Pós-Aprovação | Fazer 3–5 contribuições úteis (sem spam) em `r/shopify`, `r/ecommerce`, `r/PPC` para primeiros 50–100 usuários e 5–10 reviews | ⬜ |
