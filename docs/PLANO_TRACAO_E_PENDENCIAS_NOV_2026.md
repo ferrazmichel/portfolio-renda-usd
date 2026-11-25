@@ -78,7 +78,7 @@
 | **TR-08** | MCP / Reddit | Redigir e publicar post prático em **`r/ClaudeAI`** mostrando casos reais prontos (SEC EDGAR XBRL, Tarifas USITC China vs Vietnã vs México, 1099-NEC 2026 e USAspending) | IA (texto) + Usuário (post) | ⬜ |
 | **TR-09** | MCP / Diretórios | Submeter `us-gov-mcp-suite` em mais **2 listas/diretórios gratuitos de MCP** no GitHub (`punkpeye/awesome-mcp-servers`, `jaw9c/awesome-remote-mcp-servers`) e conferir revisão do `mcpservers.org` | IA (PR/texto) + Usuário | ✅ *(25/11 — abertos [PR #20727](https://github.com/punkpeye/awesome-mcp-servers/pull/20727) e [PR #2813](https://github.com/jaw9c/awesome-remote-mcp-servers/pull/2813); `appcypher` arquivado e `wong2` redireciona ao `mcpservers.org`)* |
 | **TR-10** | MCP / SEO Dev | Escrever e publicar **1 artigo técnico evergreen no Dev.to** (em inglês) com tutorial passo a passo conectando Claude Desktop / Cursor / n8n aos Actors SEC EDGAR + USITC Tariffs + USAspending | IA (artigo) + Usuário (publicar) | ✅ *(25/11 — [publicado no Dev.to](https://dev.to/ferrazmichel/how-to-connect-claude-cursor-n8n-to-8-official-us-government-apis-via-mcp-without-blowing-up-1dd2) com tags `#mcp`, `#ai`, `#apify`, `#programming`)* |
-| **TR-11** | MCP / Automação | Montar **1 workflow template simples em n8n** (JSON pronto) usando 1 Actor de alto apelo (ex.: alerta semanal de recalls openFDA ou eventos 8-K da SEC) e compartilhar em `r/n8n` / n8n Community | IA (template + post) + Usuário | 🔄 *(25/11 — JSON pronto em `us-gov-mcp-suite/examples/n8n-openfda-class1-recall-alert.json` + post pronto na Seção 7)* |
+| **TR-11** | MCP / Automação | Montar **1 workflow template simples em n8n** (JSON pronto) usando 1 Actor de alto apelo (ex.: alerta semanal de recalls openFDA ou eventos 8-K da SEC) e compartilhar em `r/n8n` / n8n Community | IA (template + post) + Usuário | 🔄 *(25/11 — JSON pronto em `us-gov-mcp-suite/examples/n8n-openfda-class1-recall-alert.json`; ⏰ **Lembrete 26/11:** verificar desbloqueio da conta no `community.n8n.io`, postar texto enxuto no modo `M↓` + postar em `r/n8n` após `TR-08`)* |
 | **TR-12** | Medição | Executar `/painel-usd` ao final da semana para registrar a evolução de usuários externos e runs nos 8 Actors | IA + Usuário | ⬜ |
 
 ### Fase 2 — Sprint de Lançamento do ShopPulse (Disparar Assim que Aprovar na Chrome Web Store)
@@ -355,7 +355,7 @@ Would love feedback on the `mcp_summary` output format and any other US regulato
 
 - **Arquivo importável no n8n:** `https://github.com/ferrazmichel/us-gov-mcp-suite/blob/main/examples/n8n-openfda-class1-recall-alert.json`
 - **Onde postar:**
-  - **Hoje:** [n8n Community (`Show & Tell` / `Built with n8n`)](https://community.n8n.io/c/built-with-n8n/65) *(não compete com o limite anti-spam do Reddit)*
+  - **26/11 (após desbloqueio):** [n8n Community (`Built with n8n`)](https://community.n8n.io/c/built-with-n8n/15) *(checar liberação da conta nova e colar apenas o texto enxuto no modo Markdown `M↓`)*
   - **Depois de `TR-08` (ou alternando dias):** `https://www.reddit.com/r/n8n/` *(ativar **Markdown Editor**)*
 - **Title:**
   ```text
