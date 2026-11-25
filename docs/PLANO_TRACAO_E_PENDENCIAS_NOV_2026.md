@@ -73,8 +73,8 @@
 
 | ID | Frente | Ação Prática | Responsável | Status |
 | :--- | :--- | :--- | :---: | :---: |
-| **TR-06** | MCP / Apify | Redigir e publicar apresentação da suíte `us-gov-mcp-suite` (8 Actors MCP) no **Discord oficial da Apify (`#showcase`)** | IA (texto) + Usuário (post) | ⬜ |
-| **TR-07** | MCP / Reddit | Redigir e publicar post técnico *"Show, Don't Sell"* em **`r/mcp`** destacando o problema resolvido (`outputMode: "mcp_summary"` ~2 KB, zero API keys, 8 fontes oficiais EUA) | IA (texto) + Usuário (post) | ⬜ |
+| **TR-06** | MCP / Apify | Redigir e publicar apresentação da suíte `us-gov-mcp-suite` (8 Actors MCP) no **Discord oficial da Apify (`#showcase`)** | IA (texto) + Usuário (post) | ✅ *(25/11 — postado em `#actor-promotion` no Discord Apify; versão complementar p/ `#ai-and-mcp` pronta)* |
+| **TR-07** | MCP / Reddit | Redigir e publicar post técnico *"Show, Don't Sell"* em **`r/mcp`** destacando o problema resolvido (`outputMode: "mcp_summary"` ~2 KB, zero API keys, 8 fontes oficiais EUA) | IA (texto) + Usuário (post) | ✅ *(25/11 — publicado em `r/mcp` com flair `showcase` por `u/ai-and-mcp-developer`)* |
 | **TR-08** | MCP / Reddit | Redigir e publicar post prático em **`r/ClaudeAI`** mostrando casos reais prontos (SEC EDGAR XBRL, Tarifas USITC China vs Vietnã vs México, 1099-NEC 2026 e USAspending) | IA (texto) + Usuário (post) | ⬜ |
 | **TR-09** | MCP / Diretórios | Submeter `us-gov-mcp-suite` em mais **2 listas/diretórios gratuitos de MCP** no GitHub (`punkpeye/awesome-mcp-servers`, `appcypher/awesome-mcp-servers` ou `wong2/awesome-mcp-servers`) e conferir revisão do `mcpservers.org` | IA (PR/texto) + Usuário | ⬜ |
 | **TR-10** | MCP / SEO Dev | Escrever e publicar **1 artigo técnico evergreen no Dev.to** (em inglês) com tutorial passo a passo conectando Claude Desktop / Cursor / n8n aos Actors SEC EDGAR + USITC Tariffs + USAspending | IA (artigo) + Usuário (publicar) | ⬜ |
@@ -122,7 +122,7 @@ O mantenedor `punkpeye` comentou no [PR #5684](https://github.com/punkpeye/aweso
 
 ---
 
-## 6. Material Pronto — Fase 1 (`TR-06` e `TR-07`)
+## 6. Material Pronto — Fase 1 (`TR-06`, `TR-07`, `TR-08` e `TR-10`)
 
 ### `TR-06` — Discord Oficial da Apify (`#showcase` ou `#actors-showcase`)
 
@@ -181,4 +181,129 @@ Would love feedback on the `mcp_summary` output format and any other US regulato
 
   I'd genuinely appreciate technical feedback from people building compliance, finance, or GovCon agents — especially on whether the ~2 KB summary schema leaves out any fields you'd want in the first pass.
   ```
+
+### `TR-08` — Reddit `r/ClaudeAI` *(aguardar ~12–24h após `TR-07` e ativar **Markdown Editor**)*
+
+- **Title:**
+  ```text
+  4 real-world prompts I run in Claude Desktop using official US Gov datasets (SEC XBRL, Tariffs, 2026 1099-NEC, Federal Contracts) via MCP
+  ```
+
+- **Body:**
+  ```markdown
+  I got tired of copy-pasting giant PDFs and broken government portals into Claude whenever I needed official US regulatory or financial data, so I connected 8 public US Government datasets to Claude Desktop via MCP (`mcp.apify.com` — no external API keys needed on the user side, with a `~2 KB` `mcp_summary` mode so it doesn't eat your context limit).
+
+  Here are 4 prompts that actually work reliably in one turn:
+
+  1. **Equity / 10-K & 8-K Check (SEC EDGAR XBRL):**
+     > *"Fetch the latest 10-K and 8-K filings for AAPL and NVDA using `sec-edgar-filings-mcp` in `mcp_summary` mode and compare Revenue, Net Income, Net Margin %, and Cash."*
+
+  2. **Sourcing & Section 301 Tariff Comparison (USITC HTS):**
+     > *"Use `usitc-hts-tariff-mcp` to compare the total US landed cost (duty rate, Chapter 99 Section 301/232, MPF/HMF, and FTA exemptions) for HTS `8507.60` on a $25,000 ocean shipment from China vs. Vietnam vs. Mexico."*
+
+  3. **2026 1099-NEC State Threshold Trap (`$2,000` Federal vs State Rules):**
+     > *"Check with `us-1099-nec-state-compliance-mcp` whether a $1,250 contractor payment in California, New York, Texas, and Massachusetts triggers 2026 1099-NEC state filing or 24% backup withholding."*
+
+  4. **Federal Contract Re-Compete Radar (USAspending):**
+     > *"Find expiring DoD cybersecurity prime contracts over $500k in the next 180 days using `usaspending-federal-contracts-mcp` and summarize the incumbent contractors."*
+
+  Full `claude_desktop_config.json` and Streamable HTTP config (one URL connects all 8 tools, plus OSHA, EPA ECHO, FMCSA, and openFDA):
+  https://github.com/ferrazmichel/us-gov-mcp-suite
+
+  *(Transparency: I built the 8 hosted MCP tools on Apify's Pay-Per-Event tier at `$5 / 1k` records, and Apify gives `$5/mo` free usage to test them out.)*
+  ```
+
+### `TR-10` — Artigo Técnico Evergreen no Dev.to (`dev.to`)
+
+- **Title:** `How to Connect Claude, Cursor & n8n to 8 Official US Government APIs via MCP (Without Blowing Up Your Context Window)`
+- **Tags:** `mcp`, `ai`, `apify`, `programming`
+- **Body:**
+  ````markdown
+  If you have ever tried hooking an LLM agent directly up to US government APIs, you already know why most workflows break in practice:
+
+  - **SEC EDGAR `companyfacts` XBRL** files routinely exceed **4 MB+** of raw JSON per ticker.
+  - **USITC HTS** 10-digit statistical codes often omit base duty rates inherited from 8-digit parent headings (before even adding Chapter 99 Section 301/232 duties and CBP MPF/HMF fees).
+  - **EPA ECHO** forces a two-step `QueryID` session flow just to paginate facilities.
+  - **DOL OSHA** caps inspections at 200 rows without joining violations or penalty sums.
+  - **2026 Form 1099-NEC** raised the federal threshold to **$2,000**, while key states kept **$600–$1,200** filing rules.
+
+  Instead of burning tokens parsing raw endpoints inside agent loops, I packaged **8 official US government datasets** into hosted **Model Context Protocol (MCP)** tools on Apify — all sharing a compact `"outputMode": "mcp_summary"` mode that compresses multi-megabyte responses into **~2 KB structured JSON digests**.
+
+  ## The 8 Tools Included (Zero External API Keys Needed)
+
+  1. **SEC EDGAR (`ferraz_michel/sec-edgar-filings-mcp`)** — `10-K`, `10-Q`, `8-K` material events + audited US-GAAP XBRL snapshots (`Revenue`, `Net Income`, `Net Margin %`, `Assets`, `Equity`, `Cash`).
+  2. **USITC HTS Tariff & Landed Cost (`ferraz_michel/usitc-hts-tariff-mcp`)** — 10-digit rate inheritance, USMCA/FTA exemptions, Section 301/232, MPF/HMF & `CN` vs `VN` vs `MX` vs `KR` comparisons.
+  3. **US 1099-NEC 2026 Compliance (`ferraz_michel/us-1099-nec-state-compliance-mcp`)** — all 50 states + DC rules, IRS CF/SF checks, and 24% backup withholding audits.
+  4. **openFDA Recall Radar (`ferraz_michel/openfda-recall-device-radar`)** — parallel drug, medical device, and food enforcement recalls with severity scoring.
+  5. **USAspending Federal Contracts (`ferraz_michel/usaspending-federal-contracts-mcp`)** — prime awards, NAICS incumbent intelligence, and expiring re-compete alerts.
+  6. **DOL OSHA (`ferraz_michel/osha-safety-compliance-mcp`)** — workplace inspections, citations, and penalty totals.
+  7. **EPA ECHO (`ferraz_michel/epa-echo-environmental-mcp`)** — CAA/CWA/RCRA compliance and facility environmental risk scoring.
+  8. **USDOT FMCSA (`ferraz_michel/fmcsa-carrier-safety-mcp`)** — carrier vetting (`PASS` to `DO_NOT_USE`), MC/USDOT authority, and BIPD insurance.
+
+  ## Quick Setup: Connect All 8 Tools in One Config
+
+  ### Option A — Remote Streamable HTTP (Recommended for Cursor / HTTP MCP clients)
+
+  ```json
+  {
+    "mcpServers": {
+      "us-gov-data-suite": {
+        "transport": "http",
+        "url": "https://mcp.apify.com/?actors=ferraz_michel/sec-edgar-filings-mcp,ferraz_michel/usitc-hts-tariff-mcp,ferraz_michel/us-1099-nec-state-compliance-mcp,ferraz_michel/openfda-recall-device-radar,ferraz_michel/osha-safety-compliance-mcp,ferraz_michel/epa-echo-environmental-mcp,ferraz_michel/fmcsa-carrier-safety-mcp,ferraz_michel/usaspending-federal-contracts-mcp"
+      }
+    }
+  }
+  ```
+
+  ### Option B — Claude Desktop (`claude_desktop_config.json`)
+
+  ```json
+  {
+    "mcpServers": {
+      "us-gov-data-suite": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@apify/actors-mcp-server",
+          "--actors",
+          "ferraz_michel/sec-edgar-filings-mcp,ferraz_michel/usitc-hts-tariff-mcp,ferraz_michel/us-1099-nec-state-compliance-mcp,ferraz_michel/openfda-recall-device-radar,ferraz_michel/osha-safety-compliance-mcp,ferraz_michel/epa-echo-environmental-mcp,ferraz_michel/fmcsa-carrier-safety-mcp,ferraz_michel/usaspending-federal-contracts-mcp"
+        ],
+        "env": {
+          "APIFY_TOKEN": "YOUR_APIFY_TOKEN"
+        }
+      }
+    }
+  }
+  ```
+
+  ### Option C — Direct REST API (for n8n, Make, or Python scripts)
+
+  ```bash
+  curl -X POST "https://api.apify.com/v2/acts/ferraz_michel~sec-edgar-filings-mcp/run-sync-get-dataset-items?token=YOUR_APIFY_TOKEN" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "tickersOrCiks": ["AAPL", "NVDA"],
+      "forms": ["10-K", "8-K"],
+      "includeFinancialSnapshot": true,
+      "maxFilingsPerCompany": 3,
+      "outputMode": "mcp_summary"
+    }'
+  ```
+
+  ## 3 Prompts You Can Test Right Away
+
+  1. **Equity Research:** *"Fetch AAPL and NVDA latest 10-K and 8-K filings along with audited US-GAAP Revenue, Net Income, and Cash in `mcp_summary` mode."*
+  2. **Import Landed Cost:** *"Compare total US landed cost for HTS `8507.60` lithium-ion batteries on a $25,000 ocean shipment from China vs. Vietnam vs. Mexico."*
+  3. **GovCon Re-Compete Radar:** *"Find US federal DoD cybersecurity prime contracts expiring in the next 180 days with award value above $500,000."*
+
+  ## Pricing & Links
+
+  All 8 tools run on Apify's Pay-Per-Event model (`$5.00 / 1,000` records, and Apify includes `$5/month` of free platform credits to test).
+
+  - **GitHub Showcase (`mcp.json` & prompts):** https://github.com/ferrazmichel/us-gov-mcp-suite
+  - **Apify Store Profile:** https://apify.com/ferraz_michel
+  - **Glama Connector:** https://glama.ai/mcp/connectors/com.apify.mcp/us-gov-mcp-suite
+
+  If you are building agents for finance, compliance, supply chain, or GovCon, let me know in the comments which US public dataset or summary metric you'd like added next!
+  ````
 
