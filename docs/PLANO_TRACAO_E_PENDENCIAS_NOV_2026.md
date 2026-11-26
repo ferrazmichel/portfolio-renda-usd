@@ -86,7 +86,7 @@
 | ID | Frente | Ação Prática | Responsável | Status |
 | :--- | :--- | :--- | :---: | :---: |
 | **TR-13** | ShopPulse | Instalar a versão publicada direto da Chrome Web Store em perfil limpo, testar em 2 lojas Shopify e confirmar abertura do checkout Polar.sh (`$15/mês` e `$120/ano`) | Usuário | 🔄 *(26/11 — extensão oficial testada OK; ⏰ **Almoço 26/11 em casa:** concluir KYC com documento físico + configurar `Payout Account` na Polar.sh p/ sair de Test Mode, remover `p` sobrando em `briefs.p` e retestar checkout real)* |
-| **TR-14** | ShopPulse | Cadastrar gratuitamente no **AlternativeTo** (como alternativa leve e privada ao *Koala Inspector* e *PPSPY*) e no **SaaSHub** | IA (textos) + Usuário (cadastro) | ⬜ |
+| **TR-14** | ShopPulse | Cadastrar gratuitamente no **AlternativeTo** (como alternativa leve e privada ao *Koala Inspector* e *PPSPY*) e no **SaaSHub** | IA (textos) + Usuário (cadastro) | ✅ *(26/11 — submetido no AlternativeTo como `ShopPulse` com 4 alternativas + no SaaSHub como `ShopPulse Inspector` vinculado a 7 concorrentes e 5 categorias; ambos em fila gratuita)* |
 | **TR-15** | ShopPulse | Preparar copy, tagline e primeiro comentário e publicar lançamento gratuito no **Product Hunt** | IA (kit PH) + Usuário (publicar) | ⬜ |
 | **TR-16** | ShopPulse | Fazer **3 a 5 contribuições úteis** (sem spam) em **`r/shopify`, `r/ecommerce` e `r/PPC`** mirando os primeiros **50–100 usuários ativos e 5–10 avaliações 5★** | IA (textos) + Usuário (interação) | ⬜ |
 
@@ -382,3 +382,52 @@ Would love feedback on the `mcp_summary` output format and any other US regulato
   ```
 
 
+
+---
+
+## 8. Material Pronto — Fase 2 (`TR-15` — Lançamento do ShopPulse no Product Hunt)
+
+> [!IMPORTANT]
+> **Pré-requisito antes de publicar:** aguardar o almoço (`26/11`) para concluir o KYC + `Payout Account` na **Polar.sh** e tirar o checkout do *Test Mode*, garantindo que visitantes vindos do Product Hunt consigam assinar o plano Pro imediatamente.
+
+- **Onde lançar:** https://www.producthunt.com/posts/new
+- **Name:** `ShopPulse`
+- **Tagline** *(58 / 60 caracteres)*:
+  ```text
+  Inspect Shopify themes, pixels, apps & catalogs in 1 click
+  ```
+- **Links:**
+  - **Product Link (Chrome Web Store):** `https://chromewebstore.google.com/detail/shoppulse-shopify-pixel-a/nbmgmembajfhfnebbedfddjdoeimknad`
+  - **Website / Support:** `https://ferrazmichel.github.io/shoppulse-docs/`
+- **Description** *(244 / 260 caracteres)*:
+  ```text
+  ShopPulse is a privacy-first Chrome extension for Shopify operators, agencies & media buyers. Inspect any store's theme, Meta/TikTok/GA4 pixels, apps & pricing stats, and export catalogs to CSV/JSON — 100% locally in Chrome with zero sign-up.
+  ```
+- **Topics (3):** `Chrome Extensions`, `E-Commerce`, `Marketing` *(alternativa caso falte algum: `Analytics`)*
+- **Pricing:** `Freemium` *(Free + Pro `$15/mo` ou `$120/yr`)*
+- **Assets locais para upload:**
+  - **Thumbnail (240×240 / ícone):** `shopify-pixel-catalog-inspector/icons/icon128.png`
+  - **Gallery (3 screenshots 1280×800):** `shopify-pixel-catalog-inspector/store-assets/screenshot-1-overview-1280x800.png`, `screenshot-2-pixels-apps-1280x800.png`, `screenshot-3-catalog-csv-1280x800.png`
+
+- **First Maker Comment** *(colar imediatamente após publicar o post)*:
+  ```markdown
+  Hey Product Hunt! 👋
+
+  I built **ShopPulse** because most Shopify spy/inspector extensions either ask for broad `<all_urls>` permissions across every site you visit, require mandatory account sign-up, or charge `$19–$49/mo` just to inspect a storefront's tech stack and export a catalog.
+
+  **What ShopPulse does in 1 click (100% locally in your browser):**
+  - **Store & Theme Overview:** Detects the permanent `.myshopify.com` domain, active theme name, currency, and Shopify Plus signals.
+  - **Pixels & Ad Tracking Audit:** Finds Meta, TikTok, GA4, GTM, Pinterest, and Snapchat tags along with their public tracking IDs.
+  - **Installed Apps:** Spots review, loyalty, subscription, upsell, SMS, and support apps running on the storefront.
+  - **Catalog & Pricing Stats + Export:** Inspects product/variant counts, price range, average/median prices, discounts, and exports to CSV or JSON.
+
+  **Privacy-first by design (Manifest V3):**
+  - Uses `activeTab` + on-demand `scripting` only when you click the icon — never `<all_urls>`.
+  - Zero account creation, zero remote tracking, and zero data leaves your browser.
+
+  **Free vs. Pro:**
+  - **Free:** Unlimited store inspections + 25-row CSV catalog preview forever.
+  - **Pro (`$15/mo` or `$120/yr`):** Unlimited CSV & JSON catalog exports + full Markdown competitor audit briefs.
+
+  Try it on any Shopify store and let me know which pixel, app signature, or export column you'd like added next!
+  ```
