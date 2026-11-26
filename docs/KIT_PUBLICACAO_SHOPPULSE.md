@@ -181,10 +181,10 @@ A **Polar.sh** atua como *Merchant of Record* (cuida de impostos/VAT globais aut
 | :--- | :--- | :--- | :--- |
 | SP-01 | Código & Build | Extensão MV3 + build `.zip` v1.0.0 prontos no PC de casa | ✅ |
 | SP-02 | Kit de Lançamento | Textos Chrome Web Store, justificativas MV3, Política de Privacidade e guia Polar.sh | ✅ |
-| SP-03 | GitHub (Casa) | Subir `shopify-pixel-catalog-inspector` para repo privado `ferrazmichel` | ⬜ |
-| SP-04 | Teste Local & Prints | Testar em `chrome://extensions` e capturar 3 screenshots `1280×800` | ⬜ |
-| SP-05 | Pagamentos | Criar produto `ShopPulse Pro` (`$15/mês`, chave `SPPRO-`) na Polar.sh e linkar na extensão | ⬜ |
-| SP-06 | Publicação | Pagar taxa única de `$5`, publicar Política de Privacidade e enviar `.zip` na Chrome Web Store | 🔄 *(1ª submissão em 24/11/2026 rejeitada por "Yellow Argon / Keyword Spam" — descrição v2 sem listas de marcas pronta para reenvio)* |
+| SP-03 | GitHub (Casa) | Subir `shopify-pixel-catalog-inspector` para repo privado `ferrazmichel` | ✅ |
+| SP-04 | Teste Local & Prints | Testar em `chrome://extensions` e capturar 3 screenshots `1280×800` | ✅ |
+| SP-05 | Pagamentos | Criar produto `ShopPulse Pro` (`$15/mês`, chave `SPPRO-`) na Polar.sh e linkar na extensão | ✅ |
+| SP-06 | Publicação | Pagar taxa única de `$5`, publicar Política de Privacidade e enviar `.zip` na Chrome Web Store | ✅ *(Publicada em 25/11/2026: [Chrome Web Store](https://chromewebstore.google.com/detail/shoppulse-shopify-pixel-a/nbmgmembajfhfnebbedfddjdoeimknad))* |
 | SP-07 | Divulgação Pós-Aprovação | Cadastrar ShopPulse no `AlternativeTo` (alternativa a Koala Inspector / PPSPY) e `SaaSHub` | ⬜ |
 | SP-08 | Divulgação Pós-Aprovação | Preparar textos e publicar lançamento gratuito no `Product Hunt` | ⬜ |
 | SP-09 | Divulgação Pós-Aprovação | Fazer 3–5 contribuições úteis (sem spam) em `r/shopify`, `r/ecommerce`, `r/PPC` para primeiros 50–100 usuários e 5–10 reviews | ⬜ |
