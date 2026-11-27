@@ -79,7 +79,7 @@
 | **TR-09** | MCP / Diretórios | Submeter `us-gov-mcp-suite` em mais **2 listas/diretórios gratuitos de MCP** no GitHub (`punkpeye/awesome-mcp-servers`, `jaw9c/awesome-remote-mcp-servers`) e conferir revisão do `mcpservers.org` | IA (PR/texto) + Usuário | ✅ *(25/11 — abertos [PR #20727](https://github.com/punkpeye/awesome-mcp-servers/pull/20727) e [PR #2813](https://github.com/jaw9c/awesome-remote-mcp-servers/pull/2813); `appcypher` arquivado e `wong2` redireciona ao `mcpservers.org`)* |
 | **TR-10** | MCP / SEO Dev | Escrever e publicar **1 artigo técnico evergreen no Dev.to** (em inglês) com tutorial passo a passo conectando Claude Desktop / Cursor / n8n aos Actors SEC EDGAR + USITC Tariffs + USAspending | IA (artigo) + Usuário (publicar) | ✅ *(25/11 — [publicado no Dev.to](https://dev.to/ferrazmichel/how-to-connect-claude-cursor-n8n-to-8-official-us-government-apis-via-mcp-without-blowing-up-1dd2) com tags `#mcp`, `#ai`, `#apify`, `#programming`)* |
 | **TR-11** | MCP / Automação | Montar **1 workflow template simples em n8n** (JSON pronto) usando 1 Actor de alto apelo (ex.: alerta semanal de recalls openFDA ou eventos 8-K da SEC) e compartilhar em `r/n8n` / n8n Community | IA (template + post) + Usuário | 🔄 *(25/11 — JSON pronto em `us-gov-mcp-suite/examples/n8n-openfda-class1-recall-alert.json`; ⏰ **Lembrete 26/11:** verificar desbloqueio da conta no `community.n8n.io`, postar texto enxuto no modo `M↓` + postar em `r/n8n` após `TR-08`)* |
-| **TR-12** | Medição | Executar `/painel-usd` ao final da semana para registrar a evolução de usuários externos e runs nos 8 Actors | IA + Usuário | ⬜ |
+| **TR-12** | Medição | Executar `/painel-usd` ao final da semana para registrar a evolução de usuários externos e runs nos 8 Actors | IA + Usuário | ✅ *(27/11 — `/painel-usd`: 8/8 Actors públicos, 17/17 saudáveis, `users_total=16`, `runs_total=49` (`32/33` OK em 30d), receita `US$ 0,00`, custos `US$ 15,44`, `homeenergycalcs.com` `7/120` dias; repetir medição semanal em ~04/12)* |
 
 ### Fase 2 — Sprint de Lançamento do ShopPulse (Disparar Assim que Aprovar na Chrome Web Store)
 
@@ -430,4 +430,126 @@ Would love feedback on the `mcp_summary` output format and any other US regulato
   - **Pro (`$15/mo` or `$120/yr`):** Unlimited CSV & JSON catalog exports + full Markdown competitor audit briefs.
 
   Try it on any Shopify store and let me know which pixel, app signature, or export column you'd like added next!
+  ```
+
+---
+
+## 9. Material Pronto — Fase 3 (`TR-17` e `TR-18` — `HomeEnergyCalcs` / Dados Reais EIA 2026)
+
+> [!TIP]
+> **Janela recomendada no Reddit:** publicar `TR-17` e `TR-18` a partir da **Semana 2** (com espaçamento mínimo de **2–3 dias** entre posts na mesma conta e ativando o **Markdown Editor** antes de colar as tabelas).
+
+### `TR-17` — Reddit `r/electricvehicles` (5 estados mais baratos vs. mais caros para carregar EV em casa)
+
+- **Onde postar:** `https://www.reddit.com/r/electricvehicles/` *(de casa, após o período de carência / espaçamento entre posts; marcar **Markdown Editor**)*
+- **Title:**
+  ```text
+  I ran the 2026 EIA electricity & gas numbers across all 50 US states + DC: the 5 cheapest vs. 5 most expensive states for home EV charging (and the California paradox)
+  ```
+- **Body:**
+  ```markdown
+  Everyone quotes the national average (~18¢/kWh), which hides how wildly EV economics swing depending on your state utility rate vs. local gas prices.
+
+  I compiled the **August 2026 U.S. EIA residential electricity rates** and regional gasoline benchmarks across all **50 states + DC** using a consistent baseline (**13,500 miles/year**, **3.4 mi/kWh EV**, **90% wall-to-battery efficiency**, **85% home / 15% public fast charging** vs. a **28 MPG** gas car).
+
+  ### 5 Cheapest States for Home EV Charging (`¢/kWh`)
+
+  | State | Residential Rate | 75 kWh Full Home Charge | Cost / 100 mi (Home) | Pure Home Annual Cost | Annual Savings vs. Gas (85/15) |
+  | :--- | :---: | :---: | :---: | :---: | :---: |
+  | **Nevada** | `12.72¢` | `$10.60` | `$4.16` | `$561/yr` | **`$1,151/yr`** |
+  | **Louisiana** | `12.87¢` | `$10.72` | `$4.21` | `$568/yr` | `$629/yr` |
+  | **North Dakota** | `13.31¢` | `$11.09` | `$4.35` | `$587/yr` | `$728/yr` |
+  | **Utah** | `13.31¢` | `$11.09` | `$4.35` | `$587/yr` | `$953/yr` |
+  | **Idaho** | `13.37¢` | `$11.14` | `$4.37` | `$590/yr` | `$918/yr` |
+
+  ### 5 Most Expensive States for Home EV Charging (`¢/kWh`)
+
+  | State | Residential Rate | 75 kWh Full Home Charge | Cost / 100 mi (Home) | Pure Home Annual Cost | Annual Savings vs. Gas (85/15) |
+  | :--- | :---: | :---: | :---: | :---: | :---: |
+  | **Hawaii** | `47.18¢` | `$39.32` | `$15.42` | `$2,081/yr` | `$77/yr` |
+  | **Maine** | `32.11¢` | `$26.76` | `$10.49` | `$1,417/yr` | `$60/yr` |
+  | **Massachusetts** | `30.48¢` | `$25.40` | `$9.96` | `$1,345/yr` | `$91/yr` |
+  | **California** | `29.75¢` | `$24.79` | `$9.72` | `$1,313/yr` | **`$804/yr`** |
+  | **Alaska** | `29.41¢` | `$24.51` | `$9.61` | `$1,298/yr` | `$443/yr` |
+
+  ### 3 Takeaways From the Data
+  1. **Cheapest kWh ≠ biggest net savings:** **Washington (`14.63¢/kWh` + `$4.22/gal` gas)** actually leads the entire country in annual fuel savings (**`$1,201/yr`** or **`$6,007` over 5 years**), slightly ahead of Nevada (`$1,151/yr`) and Oregon (`$994/yr`).
+  2. **The California paradox:** Even at a steep `29.75¢/kWh` standard residential average, `$4.75/gal` gasoline means California drivers *still* save **`$804/yr`** on blended charging — before factoring in off-peak EV TOU plans.
+  3. **New England is the tightest spread:** **Maine (`$60/yr`)** and **Massachusetts (`$91/yr`)** sit near break-even at standard residential tariffs because `30¢+` power meets `~$3.26–$3.28/gal` gas, making off-peak TOU plans and high-efficiency EVs critical there.
+
+  If you want to plug in your exact utility kWh rate, MPG, annual mileage, and home-vs-DCFC split for your state, I put the full state-by-state calculator online (free, no sign-up): https://homeenergycalcs.com/ev-charging-cost
+
+  Curious how your actual off-peak TOU tariff compares to your state's EIA average.
+  ```
+
+---
+
+### `TR-18` — Reddit `r/heatpumps` *(principal)* + Bloco Opcional `r/solar`
+
+#### Opção Principal — `r/heatpumps` (Break-even COP nos 50 estados + DC)
+
+- **Onde postar:** `https://www.reddit.com/r/heatpumps/` *(ativar **Markdown Editor**)*
+- **Title:**
+  ```text
+  I calculated the exact Heat Pump vs. Gas Furnace break-even COP across all 50 US states + DC using 2026 EIA rates — heat pumps win on operating cost in 17/51 jurisdictions
+  ```
+- **Body:**
+  ```markdown
+  "Will a heat pump actually lower my winter heating bill compared to my gas furnace?" almost always comes down to one ratio: your local **electricity (`¢/kWh`) vs. natural gas (`$/therm`)** spread, which defines your **break-even COP**.
+
+  Using **August 2026 U.S. EIA residential electricity & natural gas benchmarks**, I modeled a **9.5 HSPF2 cold-climate heat pump (seasonal COP `2.78`)** against an **85% AFUE gas furnace** across climate-adjusted annual heating loads (**60 MMBtu** cold, **38 MMBtu** mixed, **18 MMBtu** hot) in all **50 states + DC**.
+
+  ### Result: Heat pumps beat gas on pure volumetric operating cost in **17 of 51** jurisdictions
+
+  **Top 5 States Where Heat Pumps Save the Most vs. Gas (Pure Volumetric Fuel Cost):**
+
+  | State (Zone) | Elec (`¢/kWh`) | Gas (`$/therm`) | Break-Even COP | Annual Heat Pump Cost | Annual Gas Cost | Net Savings |
+  | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+  | **Florida** (Hot) | `14.99¢` | `$2.15` | **`1.74`** | `$284/yr` | `$455/yr` | **`+$171/yr`** |
+  | **North Carolina** (Mixed) | `14.95¢` | `$1.64` | **`2.27`** | `$598/yr` | `$733/yr` | **`+$135/yr`** |
+  | **Arkansas** (Mixed) | `14.37¢` | `$1.54` | **`2.32`** | `$575/yr` | `$688/yr` | **`+$114/yr`** |
+  | **Georgia** (Hot) | `15.90¢` | `$1.85` | **`2.14`** | `$301/yr` | `$392/yr` | **`+$91/yr`** |
+  | **Nevada** (Hot) | `12.72¢` | `$1.56` | **`2.03`** | `$241/yr` | `$330/yr` | **`+$89/yr`** |
+
+  **5 States With the Steepest Gas Advantage (Without Solar or Off-Peak TOU):**
+
+  | State (Zone) | Elec (`¢/kWh`) | Gas (`$/therm`) | Break-Even COP | Annual Heat Pump Cost | Annual Gas Cost | Gas Advantage |
+  | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+  | **Alaska** (Cold) | `29.41¢` | `$1.38` | **`5.31`** | `$1,857/yr` | `$974/yr` | `$883/yr` |
+  | **Maine** (Cold) | `32.11¢` | `$1.98` | **`4.04`** | `$2,028/yr` | `$1,398/yr` | `$630/yr` |
+  | **Michigan** (Cold) | `22.99¢` | `$1.22` | **`4.69`** | `$1,452/yr` | `$861/yr` | `$591/yr` |
+  | **New York** (Cold) | `28.65¢` | `$1.76` | **`4.06`** | `$1,809/yr` | `$1,242/yr` | `$567/yr` |
+  | **Massachusetts** (Cold) | `30.48¢` | `$2.04` | **`3.72`** | `$1,925/yr` | `$1,440/yr` | `$485/yr` |
+
+  ### Two Caveats That Often Flip the Math in Real Life
+  1. **Fixed gas meter customer charges (`$15–$35/mo`):** In mild/hot states or high-efficiency homes, disconnecting gas altogether saves **`$180–$420/yr`** in fixed meter fees that aren't in the volumetric rate.
+  2. **Electric resistance / oil / propane:** Compared to baseboard/resistance heat (`COP 1.0`), a `9.5 HSPF2` heat pump cuts heating bills by ~64% in **every single state** (hundreds to `$1,300+/yr` saved).
+
+  If you want to adjust HSPF2 (`8.5` to `11.0`), AFUE (`80%` to `95%`), and your actual utility tariff per state, here is the free calculator: https://homeenergycalcs.com/heat-pump-vs-gas
+
+  In high-rate states like MI, NY, and MA, are any of you using dual-fuel switchover temperatures (e.g. running the heat pump down to `35–40°F` and switching to gas below that)?
+  ```
+
+#### Bloco Opcional — `r/solar` *(se preferir postar em `r/solar` ou fazer em outra semana separada)*
+
+- **Onde postar:** `https://www.reddit.com/r/solar/` *(ativar **Markdown Editor**)*
+- **Title:**
+  ```text
+  Unsubsidized residential solar payback in 2026 across all 50 states + DC (8 kW @ $2.85/W, 0% tax credit): 3.5 years in Hawaii to 17.1 years in Washington
+  ```
+- **Body:**
+  ```markdown
+  With federal tax credit uncertainty top of mind in 2026, I modeled **completely unsubsidized** residential solar economics (**`8 kW` system @ `$2.85/W` = `$22,800` gross**, **`0%` incentive**, `0.80` performance ratio, `0.5%/yr` degradation, `2.5%/yr` utility escalation) across all **50 US states + DC** using 2026 EIA retail electricity rates and NREL peak sun-hours.
+
+  - **5 Fastest Unsubsidized Paybacks:**
+    - **Hawaii** (`47.18¢/kWh`, `5.9` sun hrs): **`3.5 years`** (`$6,503` Year-1 savings | `$185,146` 25-yr net profit)
+    - **California** (`29.75¢/kWh`, `5.8` sun hrs): **`5.7 years`** (`$4,031` Year-1 savings | `$106,101` 25-yr net profit)
+    - **Maine** (`32.11¢/kWh`, `4.1` sun hrs): **`7.4 years`** (`$3,075` Year-1 savings | `$75,548` 25-yr net profit)
+    - **Massachusetts** (`30.48¢/kWh`, `4.2` sun hrs): **`7.6 years`** (`$2,990` Year-1 savings | `$72,832` 25-yr net profit)
+    - **Rhode Island** (`28.18¢/kWh`, `4.3` sun hrs): **`8.1 years`** (`$2,831` Year-1 savings | `$67,721` 25-yr net profit)
+  - **5 Slowest Unsubsidized Paybacks:** **Washington (`17.1 yrs`)**, **Kentucky (`16.1 yrs`)**, **North Dakota (`15.9 yrs`)**, **Louisiana (`15.5 yrs`)**, and **Tennessee (`15.5 yrs`)** — driven by cheap `12.8¢–14.6¢/kWh` retail power rather than lack of sun.
+
+  Notice how **New England** (`ME`, `MA`, `RI`) beats sunnier Sunbelt states on payback purely because retail electric rates (`28¢–32¢/kWh`) dominate solar ROI far more than peak sun-hours (assuming 1:1 or favorable net metering).
+
+  Interactive calculator with custom `$/W`, system size, and state/utility rebates (`0%`, `15%`, `30%`): https://homeenergycalcs.com/solar-payback
   ```
